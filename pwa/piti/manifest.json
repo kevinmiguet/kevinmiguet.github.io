@@ -2,7 +2,7 @@
   "name": "piti",
   "short_name": "piti",
   "icons": [{
-        "src": "images/piti_128.png",
+        "src": "images/marker.png",
         "type": "image/png",
         "sizes": "128x128"
       }],
