@@ -16,7 +16,7 @@ let cinemas = [{
     name: 'mk2-bibliotheque-paris'
 },
 { lat: 48.864754, lng: 2.399552, name: 'mk2-gambetta-paris' },
-{ lat: 48.8705638, lng: 2.3474874, name: 'LE GRAND REX' },
+{ lat: 48.8705638, lng: 2.3474874, name: 'le-grand-rex-cinema-paris' },
 {
     lat: 48.84285430000001,
     lng: 2.3305764,
@@ -45,7 +45,7 @@ let cinemas = [{
     name: 'nouvel-odeon-ex-racine-odeon-paris'
 },
 { lat: 48.8729489, lng: 2.2998506, name: 'le-balzac-paris' },
-{ lat: 48.8704879, lng: 2.3545912, name: 'L"ARCHIPEL' },
+{ lat: 48.8704879, lng: 2.3545912, name: 'l-archipel-paris' },
 { lat: 48.8723063, lng: 2.3009149, name: 'ugc-normandie-paris' },
 {
     lat: 48.87562459999999,
@@ -62,8 +62,8 @@ let cinemas = [{
     lng: -1.6940376,
     name: 'bretagne-paris'
 },
-{ lat: 48.8328897, lng: 2.35425, name: 'ugc-gobelins-paris' },
-{ lat: 48.8521552, lng: 2.3389634, name: 'UGC DANTON' },
+// { lat: 48.8328897, lng: 2.35425, name: 'ugc-gobelins-paris' },
+{ lat: 48.8521552, lng: 2.3389634, name: 'ugc-odeon-danton-paris' },
 { lat: 48.8546989, lng: 2.3691899, name: 'mk2-bastille-paris' },
 {
     lat: 48.884184,
@@ -78,7 +78,7 @@ let cinemas = [{
 {
     lat: 48.858538,
     lng: 2.3535866,
-    name: 'LUMINOR HOTEL DE VILLE'
+    name: 'le-nouveau-latina-paris'
 },
 {
     lat: 48.8530976,
@@ -94,12 +94,12 @@ let cinemas = [{
 {
     lat: 48.8481845,
     lng: 2.3419386,
-    name: 'LE STUDIO LUXEMBOURG ACCATONE'
+    name: 'accatone-paris'
 },
-{ 
-    lat: 48.8726436, 
-    lng: 2.2973818, 
-    name: 'PUBLICIS CINEMA' 
+{
+    lat: 48.8726436,
+    lng: 2.2973818,
+    name: 'publicis-champs-elysees-paris'
 },
 { lat: 48.8730626, lng: 2.2985814, name: 'ugc-george-v-paris' },
 {
@@ -129,24 +129,24 @@ let cinemas = [{
     lng: 2.3933973,
     name: 'mk2-nation-paris'
 },
-{ lat: 48.8714948, lng: 2.3451275, name: 'MAX LINDER' },
-{ lat: 48.8499184, lng: 2.3431448, name: 'LE CHAMPO' },
+{ lat: 48.8714948, lng: 2.3451275, name: 'max-linder-panorama-paris' },
+{ lat: 48.8499184, lng: 2.3431448, name: 'le-champo-espace-jacques-tati-paris' },
 { lat: 48.885, lng: 2.371489, name: 'mk2-quai-de-seine-paris' },
 {
     lat: 48.849543,
     lng: 2.34281,
-    name: 'LA FILMOTHEQUE QUARTIER LATIN'
+    name: 'filmotheque-du-quartier-latin-paris'
 },
-{ lat: 48.8511284, lng: 2.3305129, name: 'L"ARLEQUIN' },
+{ lat: 48.8511284, lng: 2.3305129, name: 'l-arlequin-paris' },
 { lat: 48.8483276, lng: 2.3489641, name: 'le-desperado-paris-2' },
-{ lat: 48.8367842, lng: 2.3496385, name: 'L"ESCURIAL PANORAMA' },
+{ lat: 48.8367842, lng: 2.3496385, name: 'escurial-paris' },
 {
     lat: 48.883501,
     lng: 2.349929,
     name: 'louxor-palais-du-cinema-paris'
 },
 { lat: 48.8704679, lng: 2.3032618, name: 'le-lincoln-paris' },
-{ lat: 48.87560819999999, lng: 2.327922, name: '5 CAUMARTIN' },
+{ lat: 48.87560819999999, lng: 2.327922, name: 'les-cinq-caumartin-paris' },
 {
     lat: 48.844247,
     lng: 2.330402,
@@ -155,7 +155,7 @@ let cinemas = [{
 {
     lat: 48.8544396,
     lng: 2.3401914,
-    name: 'CINEMA LE CHRISTINE 21'
+    name: 'action-christine-paris'
 },
 {
     lat: 48.8913237,
