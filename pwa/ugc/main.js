@@ -1,3 +1,21 @@
+const loadContent = (cineName) => {
+
+  let message = "";
+  if (schedules[cineName].length != 0) {
+    message += `<h1>${cineName}</h1>\n`
+    schedules[cineName].forEach((film) => {
+      message += `<h2>${film.title}</h2>`;
+      for (let jour in film.schedule) {
+        message += ` \t\t${jour} : \n \t\t\t${film.schedule[jour]} \n`
+
+      }
+    });
+  }
+
+  return message;
+}
+
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
@@ -25,16 +43,7 @@ function initMap() {
     });
 
     marker.addListener('click', () => {
-      let message = "";
-
-      if (horaires[cinemas[dot].name] && horaires[cinemas[dot].name].length != 0) {
-        message += `<h1>${cinemas[dot].name}</h1>\n`
-        horaires[cinemas[dot].name].forEach((element) => {
-          message += `${element}\n`
-        });
-      }
-
-      $("#message").html(message)
+      $("#message").html(loadContent(cinemas[dot].name))
     });
   }
 

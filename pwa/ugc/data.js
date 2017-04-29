@@ -388,674 +388,17768 @@ let cinemas = [{
 //     "lng": -116.3689699,
 //     "name": "MAJESTIC"
 // }
-
-
-const horaires = {
+const schedules = {
+    "la-pagode-paris": [],
     "ugc-gobelins-paris": [],
     "mk2-grand-palais-paris": [
-        "The Lost City of Z",
-        "Sage femme",
-        "Grave"
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "19:15"
+                ],
+                "jeudi": [
+                    "19:15"
+                ],
+                "vendredi": [
+                    "18:30",
+                    "21:30"
+                ],
+                "samedi": [
+                    "10:00",
+                    "18:00",
+                    "21:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "18:00",
+                    "21:00"
+                ],
+                "lundi": [
+                    "19:15"
+                ],
+                "mardi": [
+                    "19:15"
+                ]
+            }
+        },
+        {
+            "title": "Bienvenue au Gondwana",
+            "schedule": {
+                "mercredi": [
+                    "14:00"
+                ],
+                "jeudi": [
+                    "14:00"
+                ],
+                "vendredi": [
+                    "14:00"
+                ],
+                "samedi": [
+                    "13:00"
+                ],
+                "dimanche": [
+                    "13:00"
+                ],
+                "lundi": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Sage femme",
+            "schedule": {
+                "mercredi": [
+                    "16:30"
+                ],
+                "jeudi": [
+                    "16:30"
+                ],
+                "vendredi": [
+                    "16:00"
+                ],
+                "samedi": [
+                    "15:30"
+                ],
+                "dimanche": [
+                    "15:30"
+                ],
+                "lundi": [
+                    "16:30"
+                ],
+                "mardi": [
+                    "16:30"
+                ]
+            }
+        }
     ],
     "le-cinema-du-pantheon-paris": [
-        "The Young Lady",
-        "On m'appelle Jeeg le robot"
-    ],
-    "bretagne-paris": [
-        "Power Rangers",
-        "Fast & Furious 8"
-    ],
-    "le-balzac-paris": [
-        "À voix haute : la force de la parole",
-        "Je danserai si je veux",
-        "L'Opéra"
-    ],
-    "nouvel-odeon-ex-racine-odeon-paris": [
-        "Les salauds dorment en paix",
-        "Yojimbo : le garde du corps",
-        "Entre le ciel et l'enfer",
-        "La forteresse cachee",
-        "Un merveilleux dimanche",
-        "Le chateau de l'araignee",
-        "L'ange ivre",
-        "Sanjuro",
-        "Vivre dans la peur",
-        "Vivre",
-        "La Fille de Brest",
-        "La consolation",
-        "Promenons nous avec les petits loups"
-    ],
-    "majestic-bastille-paris": [
-        "À voix haute : la force de la parole",
-        "L'homme aux mille visages",
-        "Mister Universo",
-        "Peter Pan"
-    ],
-    "ugc-odeon-danton-paris": [
-        "C'est beau la vie quand on y pense",
-        "À voix haute : la force de la parole",
-        "Life - Origine Inconnue",
-        "Lion",
-        "La Fille de neige (Viva l'Opéra)"
-    ],
-    "le-nouveau-latina-paris": [
-        "Glory",
-        "L'éveil de la permaculture",
-        "Sage femme",
-        "Heis",
-        "Moonlight",
-        "La La Land",
-        "Orpheline",
-        "Au long de rivière Fango",
-        "Mesdames et Messieurs, bonsoir",
-        "Peter Pan"
-    ],
-    "mac-mahon-paris-2": [
-        "La La Land",
-        "Le clan des irreductibles",
-        "Jackie",
-        "De l'influence des rayons gamma sur le comportement des marguerites",
-        "Un Américain à Paris",
-        "Silence"
-    ],
-    "mk2-bastille-paris": [
-        "Jonction 48",
-        "Je danserai si je veux",
-        "L'Opéra",
-        "Gold",
-        "Change pas de main",
-        "Aurore"
-    ],
-    "ugc-maillot-paris": [
-        "Sous le même toit",
-        "The Young Lady",
-        "C'est beau la vie quand on y pense",
-        "Gold",
-        "Le procès du siècle",
-        "Alien, le huitième passager"
-    ],
-    "mk2-parnasse-paris": [
-        "Lettres de la guerre",
-        "Grave",
-        "Les figures de l'ombre",
-        "Sage femme",
-        "Miss Sloane",
-        "La La Land",
-        "Félicité",
-        "Patients",
-        "Citoyen d'honneur",
-        "L'école des lapins",
-        "Une vie de chien",
-        "Les P'tits Explorateurs",
-        "Maison sucrée, jardin salé"
-    ],
-    "reflet-medicis-paris": [
-        "L'amour existe",
-        "La douceur du village",
-        "Ikarie XB1",
-        "Taipei Story",
-        "United States of Love",
-        "Je la connaissais bien",
-        "Le Concours",
-        "Les sauteurs",
-        "Adieu Mandalay"
-    ],
-    "ugc-normandie-paris": [
-        "The Young Lady",
-        "Cessez le feu",
-        "Fast & Furious 8",
-        "Corporate"
-    ],
-    "mk2-odeon-paris": [
-        "Life - Origine Inconnue",
-        "Cessez le feu",
-        "Corporate",
-        "L'homme aux mille visages",
-        "Fast & Furious 8",
-        "Maison sucrée, jardin salé",
-        "Les P'tits Explorateurs",
-        "Aurore"
-    ],
-    "les-3-luxembourg-paris": [
-        "Retour à Forbach",
-        "Sage femme",
-        "Orpheline",
-        "Paris est une fête",
-        "Moonlight",
-        "Les mauvaises herbes",
-        "Citoyen d'honneur",
-        "La Confession",
-        "La La Land",
-        "Paris pieds nus",
-        "Patients",
-        "Islam pour mémoire",
-        "Charlie et la chocolaterie"
-    ],
-    "mk2-gambetta-paris": [
-        "Life - Origine Inconnue",
-        "Sous le même toit",
-        "C'est beau la vie quand on y pense",
-        "Corporate",
-        "L'Opéra",
-        "Baby Boss",
-        "Bienvenue au Gondwana",
-        "La belle et la bête",
-        "Une vie de chien",
-        "Les P'tits Explorateurs",
-        "Maison sucrée, jardin salé"
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "La Vie lointaine",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ]
+            }
+        }
     ],
     "ugc-odeon-paris": [
-        "Sous le même toit",
-        "The Young Lady",
-        "Gold",
-        "Monsieur & Madame Adelman",
-        "La belle et la bête",
-        "Le procès du siècle",
-        "Aurore"
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "samedi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "lundi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "mardi": [
+                    "10:20",
+                    "12:30",
+                    "14:45",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:15",
+                    "16:00",
+                    "19:00",
+                    "21:45"
+                ]
+            }
+        }
     ],
-    "mk2-quai-de-loire-paris": [
-        "Life - Origine Inconnue",
-        "Cessez le feu",
-        "Corporate",
-        "Ghost in the Shell",
-        "Baby Boss",
-        "Fast & Furious 8",
-        "Pas comme des loups",
-        "Paris est une fête",
-        "Une vie de chien",
-        "Les gardiens de la galaxie 2"
+    "bretagne-paris": [
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ],
+                "mardi": [
+                    "11:00",
+                    "13:35",
+                    "16:10",
+                    "18:45",
+                    "21:25"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "jeudi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "vendredi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "samedi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "dimanche": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "lundi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ],
+                "mardi": [
+                    "11:10",
+                    "13:40",
+                    "16:10",
+                    "18:40",
+                    "21:15"
+                ]
+            }
+        }
     ],
-    "ugc-montparnasse-paris": [
-        "Sous le même toit",
-        "Life - Origine Inconnue",
-        "Gold",
-        "C'est beau la vie quand on y pense",
-        "Baby Boss",
-        "Fast & Furious 8",
-        "La belle et la bête",
-        "À bras ouverts",
-        "Les gardiens de la galaxie 2",
-        "La Fille de neige (Viva l'Opéra)",
-        "Aurore"
+    "nouvel-odeon-ex-racine-odeon-paris": [
+        {
+            "title": "Félicité",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:35"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:35"
+                ],
+                "vendredi": [
+                    "16:35",
+                    "19:00"
+                ],
+                "samedi": [
+                    "16:35",
+                    "19:00"
+                ],
+                "dimanche": [
+                    "16:35",
+                    "19:00"
+                ],
+                "lundi": [
+                    "14:00",
+                    "21:35"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:35"
+                ]
+            }
+        },
+        {
+            "title": "Le chateau de l'araignee",
+            "schedule": {
+                "samedi": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "16:35"
+                ]
+            }
+        },
+        {
+            "title": "Entre le ciel et l'enfer",
+            "schedule": {
+                "vendredi": [
+                    "21:35"
+                ],
+                "mardi": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "La forteresse cachee",
+            "schedule": {
+                "jeudi": [
+                    "19:00"
+                ],
+                "samedi": [
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Yojimbo : le garde du corps",
+            "schedule": {
+                "mercredi": [
+                    "21:35"
+                ],
+                "dimanche": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Sanjuro",
+            "schedule": {
+                "jeudi": [
+                    "21:35"
+                ],
+                "vendredi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Vivre",
+            "schedule": {
+                "mercredi": [
+                    "19:00"
+                ],
+                "mardi": [
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "L'ange ivre",
+            "schedule": {
+                "lundi": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "Wallace & Gromit : les inventuriers",
+            "schedule": {
+                "dimanche": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Allez coucher ailleurs",
+            "schedule": {
+                "dimanche": [
+                    "11:35"
+                ]
+            }
+        }
     ],
-    "grand-action-paris": [
-        "Videodrome",
-        "The Lost City of Z",
-        "Certaines femmes",
-        "Les Promesses de l'ombre",
-        "The Immigrant",
-        "Valmont",
-        "Maps To The Stars",
-        "Spider",
-        "Les Raisins de la colere",
-        "Manchester by the Sea",
-        "A Dangerous method",
-        "Cosmopolis",
-        "La Nuit nous appartient",
-        "Allez coucher ailleurs",
-        "M. butterfly",
-        "Loving",
-        "Two lovers",
-        "Wallace & Gromit : les inventuriers",
-        "A History of Violence"
+    "mk2-bastille-paris": [
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:45",
+                    "13:15",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "10:50",
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:50",
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:50",
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:50",
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:50",
+                    "13:05",
+                    "15:10",
+                    "17:25",
+                    "19:45",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "10:35",
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "10:35",
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "samedi": [
+                    "10:35",
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "10:35",
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "lundi": [
+                    "10:35",
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ],
+                "mardi": [
+                    "12:45",
+                    "14:55",
+                    "17:15",
+                    "19:35",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "samedi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "lundi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ],
+                "mardi": [
+                    "10:40",
+                    "13:40",
+                    "16:30",
+                    "19:10",
+                    "21:40"
+                ]
+            }
+        }
     ],
-    "ugc-lyon-bastille-paris": [
-        "C'est beau la vie quand on y pense",
-        "Sous le même toit",
-        "Baby Boss",
-        "Life - Origine Inconnue",
-        "Les Schtroumpfs et le village perdu",
-        "Fast & Furious 8",
-        "Lion",
-        "La belle et la bête",
-        "Logan",
-        "Les gardiens de la galaxie 2",
-        "Alien, le huitième passager"
+    "le-balzac-paris": [
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:30",
+                    "18:00",
+                    "20:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ]
+            }
+        },
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "16:20",
+                    "18:20",
+                    "20:30"
+                ],
+                "jeudi": [
+                    "19:50",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "19:50",
+                    "21:50"
+                ],
+                "samedi": [
+                    "16:20",
+                    "18:20",
+                    "20:30"
+                ],
+                "dimanche": [
+                    "11:10",
+                    "16:20",
+                    "18:20"
+                ],
+                "lundi": [
+                    "11:10",
+                    "14:10",
+                    "16:20",
+                    "18:20",
+                    "20:30"
+                ],
+                "mardi": [
+                    "16:20",
+                    "18:20",
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "15:50",
+                    "20:15"
+                ],
+                "jeudi": [
+                    "13:50",
+                    "15:50",
+                    "17:50"
+                ],
+                "vendredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50"
+                ],
+                "samedi": [
+                    "13:50",
+                    "15:50",
+                    "20:15"
+                ],
+                "dimanche": [
+                    "10:50",
+                    "13:50",
+                    "15:50"
+                ],
+                "lundi": [
+                    "13:50",
+                    "15:50",
+                    "20:15"
+                ],
+                "mardi": [
+                    "13:50",
+                    "15:50",
+                    "20:15"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "14:10",
+                    "17:50"
+                ],
+                "jeudi": [
+                    "14:10"
+                ],
+                "vendredi": [
+                    "14:10"
+                ],
+                "samedi": [
+                    "14:10",
+                    "17:50"
+                ],
+                "dimanche": [
+                    "14:10"
+                ],
+                "lundi": [
+                    "10:50",
+                    "17:50"
+                ],
+                "mardi": [
+                    "14:10",
+                    "17:50"
+                ]
+            }
+        },
+        {
+            "title": "La morsure des dieux",
+            "schedule": {
+                "mercredi": [
+                    "11:00"
+                ],
+                "vendredi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ],
+                "lundi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Faust",
+            "schedule": {
+                "jeudi": [
+                    "20:30"
+                ]
+            }
+        }
     ],
-    "publicis-champs-elysees-paris": [
-        "Mes vies de chien",
-        "L'affranchie",
-        "11 Minutes",
-        "Miss Sloane",
-        "La La Land",
-        "Le serpent aux mille coupures",
-        "Le Grand Miracle",
-        "Lilo & Stitch"
-    ],
-    "mk2-beaubourg-paris": [
-        "Les initiés",
-        "11 Minutes",
-        "Retour à Forbach",
-        "Taipei Story",
-        "Grave",
-        "Lettres de la guerre",
-        "La belle occasion",
-        "Félicité",
-        "Jours de France",
-        "La vengeresse",
-        "La La Land",
-        "Pas comme des loups",
-        "L'Opéra",
-        "United States of Love",
-        "Paris est une fête",
-        "Moonlight",
-        "Certaines femmes",
-        "Paris pieds nus",
-        "The Fits",
-        "David Lynch: The Art Life",
-        "La papesse Jeanne"
-    ],
-    "ugc-rotonde-paris": [
-        "Corporate",
-        "Cessez le feu",
-        "Un profil pour deux",
-        "Alien, le huitième passager"
-    ],
-    "cinema-la-clef-paris": [
-        "Grave",
-        "United States of Love",
-        "20th Century Women",
-        "Paris la blanche",
-        "Massilia Sound System : le Film",
-        "Les mauvaises herbes",
-        "Moonlight",
-        "Citoyen d'honneur",
-        "Paris pieds nus",
-        "Utu",
-        "Camino a la Paz",
-        "Pris de court",
-        "Les sauteurs",
-        "Ceci est mon corps",
-        "Peter Pan",
-        "Gimme Danger",
-        "Noces",
-        "David Lynch: The Art Life"
-    ],
-    "accatone-paris": [
-        "Chez nous",
-        "Patients",
-        "Madame B, histoire d'une Nord-Coréenne",
-        "Et les mistrals gagnants",
-        "Lumière ! L'aventure commence",
-        "Paterson",
-        "Islam pour mémoire",
-        "Mademoiselle"
-    ],
-    "le-brady-paris": [
-        "Les mauvaises herbes",
-        "Pris de court",
-        "Citoyen d'honneur",
-        "Videodrome",
-        "Au long de rivière Fango",
-        "Paris pieds nus",
-        "Fantastic Birthday",
-        "La La Land",
-        "20th Century Women",
-        "Charlie et la chocolaterie",
-        "Le Tigre et les animaux de la forêt",
-        "Terre de roses",
-        "Panique tous courts",
-        "Noces",
-        "Paterson",
-        "Your Name",
-        "Go Fish",
-        "Elle",
-        "Les Fleurs Bleues",
-        "Mad Max : Fury Road, version black & chrome",
-        "Tramontane"
-    ],
-    "ugc-cine-cite-paris-19-paris": [
-        "C'est beau la vie quand on y pense",
-        "Baby Boss",
-        "Sous le même toit",
-        "The Young Lady",
-        "Life - Origine Inconnue",
-        "Fast & Furious 8",
-        "Cessez le feu",
-        "Gold",
-        "Power Rangers",
-        "Bienvenue au Gondwana",
-        "Boule et Bill 2",
-        "Mes vies de chien",
-        "Les Schtroumpfs et le village perdu",
-        "La belle et la bête",
-        "Ghost in the Shell",
-        "Corporate",
-        "Les gardiens de la galaxie 2",
-        "La Fille de neige (Viva l'Opéra)",
-        "La colère d'un homme patient",
-        "Jour J",
-        "Le procès du siècle",
-        "Alien, le huitième passager"
-    ],
-    "ugc-opera-paris": [
-        "Life - Origine Inconnue",
-        "C'est beau la vie quand on y pense",
-        "Sous le même toit",
-        "La belle et la bête",
-        "Alien, le huitième passager (version inédite)"
-    ],
-    "espace-saint-michel-paris": [
-        "La vengeresse",
-        "Mai Morire",
-        "Pas comme des loups",
-        "Un Paese di Calabria",
-        "La Sociale",
-        "1336 jours, des hauts, débats, mais debout",
-        "L'Enfant aveugle",
-        "Zona Franca",
-        "Tombé du ciel",
-        "Koropa"
-    ],
-    "le-cinema-des-cineastes-paris": [
-        "Glory",
-        "Je danserai si je veux",
-        "L'Opéra",
-        "L'autre côté de l'espoir",
-        "Paris la blanche",
-        "Orpheline",
-        "Corniche Kennedy",
-        "Blanka",
-        "La Petite Fille au bout du chemin"
-    ],
-    "ugc-george-v-paris": [
-        "Sous le même toit",
-        "Baby Boss",
-        "C'est beau la vie quand on y pense",
-        "Lion",
-        "Life - Origine Inconnue",
-        "Bienvenue au Gondwana",
-        "Monsieur & Madame Adelman",
-        "La belle et la bête",
-        "Les figures de l'ombre",
-        "Gold",
-        "Les Schtroumpfs et le village perdu",
-        "Ghost in the Shell",
-        "Les gardiens de la galaxie 2",
-        "Jour J"
-    ],
-    "le-lucernaire-cinema-d-art-et-essai-paris": [
-        "Parfaites",
-        "Wallace & Gromit : les inventuriers",
-        "Les sauteurs",
-        "Silence",
-        "L'éveil de la permaculture",
-        "Le banquet des fraudeurs",
-        "Mauvais élèves",
-        "Le Grand Miracle",
-        "Pris de court",
-        "La Confession",
-        "United States of Love",
-        "Et les mistrals gagnants",
-        "Elle",
-        "Fixeur",
-        "Ballerina",
-        "Morbayassa"
-    ],
-    "mk2-hautefeuille-paris": [
-        "Les initiés",
-        "La jeune fille et son aigle",
-        "The Lost City of Z",
-        "L'autre côté de l'espoir",
-        "Félicité",
-        "Grave",
-        "Une vie de chien",
-        "Les Temps modernes"
-    ],
-    "la-pagode-paris": [],
-    "mk2-nation-paris": [
-        "Cessez le feu",
-        "Corporate",
-        "The Young Lady",
-        "Un profil pour deux",
-        "Baby Boss",
-        "Maison sucrée, jardin salé",
-        "Les P'tits Explorateurs"
-    ],
-    "mk2-quai-de-seine-paris": [
-        "Les initiés",
-        "The Young Lady",
-        "À voix haute : la force de la parole",
-        "The Lost City of Z",
-        "L'homme aux mille visages",
-        "L'Opéra",
-        "Grave",
-        "L'éveil de la permaculture",
-        "La belle et la bête",
-        "L'école des lapins",
-        "Maison sucrée, jardin salé",
-        "Les P'tits Explorateurs",
-        "One Kiss",
-        "Aurore"
-    ],
-    "ugc-cine-cite-les-halles-paris": [
-        "The Young Lady",
-        "Sous le même toit",
-        "Corporate",
-        "Baby Boss",
-        "La jeune fille et son aigle",
-        "C'est beau la vie quand on y pense",
-        "À voix haute : la force de la parole",
-        "Ghost in the Shell",
-        "Mes vies de chien",
-        "Cessez le feu",
-        "Life - Origine Inconnue",
-        "Split",
-        "Bienvenue au Gondwana",
-        "Je danserai si je veux",
-        "Lion",
-        "L'Opéra",
-        "Un profil pour deux",
-        "Gold",
-        "La belle et la bête",
-        "Fast & Furious 8",
-        "Logan",
-        "L'homme aux mille visages",
-        "Les Schtroumpfs et le village perdu",
-        "À bras ouverts",
-        "Boule et Bill 2",
-        "Patients",
-        "Les figures de l'ombre",
-        "Et les mistrals gagnants",
-        "Ma vie de courgette",
-        "Power Rangers",
-        "Les gardiens de la galaxie 2",
-        "En amont du fleuve",
-        "La colère d'un homme patient",
-        "Sword Art Online : The Movie",
-        "Aurore"
+    "mac-mahon-paris-2": [
+        {
+            "title": "La La Land",
+            "schedule": {
+                "vendredi": [
+                    "18:00"
+                ],
+                "samedi": [
+                    "21:00"
+                ],
+                "dimanche": [
+                    "18:00",
+                    "20:15"
+                ],
+                "lundi": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Madame de...",
+            "schedule": {
+                "samedi": [
+                    "19:15"
+                ],
+                "dimanche": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Le plaisir",
+            "schedule": {
+                "samedi": [
+                    "17:30"
+                ],
+                "dimanche": [
+                    "16:00"
+                ],
+                "lundi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Le desordre et la nuit",
+            "schedule": {
+                "vendredi": [
+                    "16:00"
+                ],
+                "samedi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "vendredi": [
+                    "20:15"
+                ],
+                "lundi": [
+                    "20:15"
+                ]
+            }
+        },
+        {
+            "title": "Marie-octobre",
+            "schedule": {
+                "vendredi": [
+                    "14:00"
+                ],
+                "samedi": [
+                    "15:45"
+                ]
+            }
+        }
     ],
     "l-arlequin-paris": [
-        "Glory",
-        "L'Opéra",
-        "Lettres de la guerre",
-        "Sage femme",
-        "Paris la blanche",
-        "Paula",
-        "Voyage à travers le cinéma français",
-        "Les Adieux"
+        {
+            "title": "Glory",
+            "schedule": {
+                "mercredi": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "13:45",
+                    "15:50",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ],
+                "samedi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "14:10",
+                    "16:40"
+                ],
+                "lundi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ],
+                "mardi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Sage femme",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Lettres de la guerre",
+            "schedule": {
+                "samedi": [
+                    "11:10"
+                ],
+                "dimanche": [
+                    "11:10"
+                ]
+            }
+        },
+        {
+            "title": "Voyage à travers le cinéma français",
+            "schedule": {
+                "dimanche": [
+                    "10:45"
+                ]
+            }
+        },
+        {
+            "title": "1974, Une Partie De Campagne",
+            "schedule": {
+                "dimanche": [
+                    "20:00"
+                ]
+            }
+        }
     ],
-    "louxor-palais-du-cinema-paris": [
-        "Je danserai si je veux",
-        "L'Opéra",
-        "L'autre côté de l'espoir",
-        "Félicité",
-        "Les P'tits Explorateurs",
-        "Je ne suis pas là pour être aimé",
-        "Adieu Mandalay",
-        "1001 pattes",
-        "Au gré du courant"
-    ],
-    "le-lincoln-paris": [
-        "La jeune fille et son aigle",
-        "Les initiés",
-        "The Young Lady"
-    ],
-    "mk2-bibliotheque-paris": [
-        "Fast & Furious 8",
-        "Baby Boss",
-        "The Young Lady",
-        "Corporate",
-        "À voix haute : la force de la parole",
-        "Sous le même toit",
-        "Life - Origine Inconnue",
-        "Cessez le feu",
-        "Bienvenue au Gondwana",
-        "Ghost in the Shell",
-        "Split",
-        "La belle et la bête",
-        "Gold",
-        "Mes vies de chien",
-        "Power Rangers",
-        "C'est beau la vie quand on y pense",
-        "Les Schtroumpfs et le village perdu",
-        "Un profil pour deux",
-        "L'Opéra",
-        "Lion",
-        "Grave",
-        "Boule et Bill 2",
-        "À bras ouverts",
-        "Les figures de l'ombre",
-        "Logan",
-        "Une vie de chien",
-        "Les gardiens de la galaxie 2",
-        "Maison sucrée, jardin salé",
-        "Les P'tits Explorateurs",
-        "Noma au Japon : Réinventer le meilleur restaurant au monde",
-        "Aurore",
-        "À mon âge je me cache encore pour fumer",
-        "Spotlight"
+    "espace-saint-michel-paris": [
+        {
+            "title": "Mister Universo",
+            "schedule": {
+                "mercredi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "samedi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "lundi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ],
+                "mardi": [
+                    "13:35",
+                    "15:15",
+                    "16:55",
+                    "20:15",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Pas comme des loups",
+            "schedule": {
+                "mercredi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "jeudi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "vendredi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "samedi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "dimanche": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "lundi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ],
+                "mardi": [
+                    "13:20",
+                    "17:30",
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Mai Morire",
+            "schedule": {
+                "mercredi": [
+                    "14:30",
+                    "18:35"
+                ],
+                "jeudi": [
+                    "14:30",
+                    "18:35"
+                ],
+                "vendredi": [
+                    "14:30",
+                    "18:35"
+                ],
+                "samedi": [
+                    "14:30",
+                    "18:35"
+                ],
+                "dimanche": [
+                    "14:30",
+                    "18:35"
+                ],
+                "lundi": [
+                    "14:30",
+                    "18:35"
+                ],
+                "mardi": [
+                    "14:30",
+                    "18:35"
+                ]
+            }
+        },
+        {
+            "title": "La vengeresse",
+            "schedule": {
+                "mercredi": [
+                    "16:05",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "16:05"
+                ],
+                "vendredi": [
+                    "16:05",
+                    "21:35"
+                ],
+                "samedi": [
+                    "16:05",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "16:05"
+                ],
+                "lundi": [
+                    "16:05",
+                    "21:35"
+                ],
+                "mardi": [
+                    "16:05",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Un Paese di Calabria",
+            "schedule": {
+                "jeudi": [
+                    "18:50"
+                ],
+                "dimanche": [
+                    "18:50"
+                ],
+                "mardi": [
+                    "18:50"
+                ]
+            }
+        },
+        {
+            "title": "La Sociale",
+            "schedule": {
+                "samedi": [
+                    "18:55"
+                ],
+                "lundi": [
+                    "18:55"
+                ]
+            }
+        },
+        {
+            "title": "Zona Franca",
+            "schedule": {
+                "mercredi": [
+                    "18:40"
+                ],
+                "vendredi": [
+                    "18:40"
+                ]
+            }
+        },
+        {
+            "title": "1336 jours, des hauts, débats, mais debout",
+            "schedule": {
+                "dimanche": [
+                    "21:35"
+                ]
+            }
+        }
     ],
     "les-cinq-caumartin-paris": [
-        "Je danserai si je veux",
-        "The Young Lady",
-        "Cessez le feu",
-        "Corporate",
-        "Sage femme",
-        "Chez nous"
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ],
+                "jeudi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ],
+                "vendredi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:50"
+                ],
+                "samedi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ],
+                "lundi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ],
+                "mardi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35"
+                ],
+                "jeudi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35"
+                ],
+                "vendredi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "samedi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35"
+                ],
+                "lundi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35"
+                ],
+                "mardi": [
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30"
+                ],
+                "jeudi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30"
+                ],
+                "vendredi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30",
+                    "21:30"
+                ],
+                "samedi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30"
+                ],
+                "lundi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30"
+                ],
+                "mardi": [
+                    "11:50",
+                    "13:40",
+                    "15:30",
+                    "17:30",
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "jeudi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "vendredi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "samedi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "dimanche": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "lundi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ],
+                "mardi": [
+                    "11:45",
+                    "14:00",
+                    "16:15",
+                    "18:30",
+                    "20:45"
+                ]
+            }
+        },
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "jeudi": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "vendredi": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "samedi": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "dimanche": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "lundi": [
+                    "11:40",
+                    "15:40",
+                    "19:40"
+                ],
+                "mardi": [
+                    "11:40",
+                    "15:40"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "13:40",
+                    "17:40"
+                ],
+                "jeudi": [
+                    "13:40",
+                    "17:40"
+                ],
+                "vendredi": [
+                    "13:40",
+                    "17:40",
+                    "21:40"
+                ],
+                "samedi": [
+                    "13:40",
+                    "17:40",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "13:40",
+                    "17:40"
+                ],
+                "lundi": [
+                    "13:40",
+                    "17:40"
+                ],
+                "mardi": [
+                    "13:40"
+                ]
+            }
+        }
     ],
-    "le-desperado-paris-2": [
-        "A bout de souffle",
-        "Le journal tombe a cinq heures",
-        "Une femme est une femme",
-        "La joyeuse suicidée",
-        "Les mariés de l'an II",
-        "Hercule",
-        "New York-Miami",
-        "Network",
-        "Le cerveau",
-        "Pierrot le fou",
-        "Judith therpauve",
-        "Cent Mille Dollars au soleil",
-        "L'homme qui tua Liberty Valance",
-        "Le Voleur",
-        "Massacre a la tronconneuse",
-        "Grabuge !"
+    "reflet-medicis-paris": [
+        {
+            "title": "Ikarie XB1",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "13:50",
+                    "15:50",
+                    "17:50"
+                ],
+                "vendredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ],
+                "samedi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "11:45",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ],
+                "lundi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ],
+                "mardi": [
+                    "11:45",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Taipei Story",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "vendredi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "samedi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "lundi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:20"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30"
+                ]
+            }
+        },
+        {
+            "title": "Adieu Mandalay",
+            "schedule": {
+                "mercredi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "lundi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:10",
+                    "16:40",
+                    "19:10",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "La douceur du village",
+            "schedule": {
+                "vendredi": [
+                    "11:40"
+                ],
+                "samedi": [
+                    "11:40"
+                ],
+                "dimanche": [
+                    "11:40"
+                ],
+                "lundi": [
+                    "11:40"
+                ],
+                "mardi": [
+                    "11:40"
+                ]
+            }
+        },
+        {
+            "title": "Lettres de la guerre",
+            "schedule": {
+                "vendredi": [
+                    "11:35"
+                ],
+                "lundi": [
+                    "11:35"
+                ],
+                "mardi": [
+                    "11:35"
+                ]
+            }
+        },
+        {
+            "title": "L'ascension",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Le Concours",
+            "schedule": {
+                "samedi": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "Paris 1900",
+            "schedule": {
+                "mercredi": [
+                    "20:00"
+                ]
+            }
+        }
     ],
-    "ugc-cine-cite-la-defense-paris": [
-        "Fast & Furious 8",
-        "Baby Boss",
-        "Mes vies de chien",
-        "Sous le même toit",
-        "Cessez le feu",
-        "The Young Lady",
-        "Life - Origine Inconnue",
-        "Gold",
-        "Ghost in the Shell",
-        "La belle et la bête",
-        "Boule et Bill 2",
-        "Les Schtroumpfs et le village perdu",
-        "Bienvenue au Gondwana",
-        "Power Rangers",
-        "Corporate",
-        "À bras ouverts",
-        "Un profil pour deux",
-        "Les gardiens de la galaxie 2",
-        "Le procès du siècle",
-        "La Fille de neige (Viva l'Opéra)",
-        "On m'appelle Jeeg le robot",
-        "Alien, le huitième passager",
-        "Monstres Academy"
+    "accatone-paris": [
+        {
+            "title": "Patients",
+            "schedule": {
+                "samedi": [
+                    "18:20"
+                ],
+                "dimanche": [
+                    "18:20"
+                ],
+                "lundi": [
+                    "18:20"
+                ]
+            }
+        },
+        {
+            "title": "Paterson",
+            "schedule": {
+                "samedi": [
+                    "20:30"
+                ],
+                "dimanche": [
+                    "20:30"
+                ],
+                "lundi": [
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Citoyen d'honneur",
+            "schedule": {
+                "samedi": [
+                    "16:10"
+                ],
+                "dimanche": [
+                    "16:10"
+                ],
+                "lundi": [
+                    "16:10"
+                ]
+            }
+        },
+        {
+            "title": "La Confession",
+            "schedule": {
+                "samedi": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Chez nous",
+            "schedule": {
+                "vendredi": [
+                    "16:50"
+                ],
+                "dimanche": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Madame B, histoire d'une Nord-Coréenne",
+            "schedule": {
+                "vendredi": [
+                    "13:30"
+                ]
+            }
+        },
+        {
+            "title": "Paris est une fête",
+            "schedule": {
+                "vendredi": [
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Lumière ! L'aventure commence",
+            "schedule": {
+                "vendredi": [
+                    "19:00"
+                ]
+            }
+        }
+    ],
+    "ugc-rotonde-paris": [
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:00",
+                    "11:50",
+                    "13:55",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:25",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:25",
+                    "12:40",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "louxor-palais-du-cinema-paris": [
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "samedi": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "lundi": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ],
+                "mardi": [
+                    "11:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "jeudi": [
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "lundi": [
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ],
+                "mardi": [
+                    "13:45",
+                    "15:55",
+                    "18:15",
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "13:30",
+                    "15:35",
+                    "19:35"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "15:35",
+                    "19:35"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:30",
+                    "15:35",
+                    "19:35"
+                ],
+                "samedi": [
+                    "13:30",
+                    "15:35",
+                    "19:35"
+                ],
+                "dimanche": [
+                    "15:35",
+                    "19:35"
+                ],
+                "lundi": [
+                    "15:35",
+                    "19:35"
+                ],
+                "mardi": [
+                    "13:30",
+                    "15:35",
+                    "19:35"
+                ]
+            }
+        },
+        {
+            "title": "L'autre côté de l'espoir",
+            "schedule": {
+                "mercredi": [
+                    "17:40",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "17:40",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "17:40",
+                    "21:40"
+                ],
+                "samedi": [
+                    "17:40",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "17:40"
+                ],
+                "lundi": [
+                    "17:40"
+                ],
+                "mardi": [
+                    "17:40",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Allez coucher ailleurs",
+            "schedule": {
+                "mercredi": [
+                    "11:30"
+                ],
+                "vendredi": [
+                    "11:00"
+                ],
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "13:30"
+                ],
+                "lundi": [
+                    "13:30"
+                ]
+            }
+        },
+        {
+            "title": "Brisby et le secret de Nimh",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Monte là-dessus",
+            "schedule": {
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        }
+    ],
+    "ugc-normandie-paris": [
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ],
+                "mardi": [
+                    "10:05",
+                    "12:00",
+                    "14:05",
+                    "16:10",
+                    "18:15",
+                    "20:20",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ],
+                "mardi": [
+                    "10:05",
+                    "12:00",
+                    "13:55",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:25",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:45"
+                ]
+            }
+        }
+    ],
+    "ugc-opera-paris": [
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:55",
+                    "13:10",
+                    "15:25",
+                    "17:35",
+                    "19:50",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ],
+                "mardi": [
+                    "10:45",
+                    "12:55",
+                    "15:10",
+                    "17:25",
+                    "19:40",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:25",
+                    "12:35",
+                    "14:50",
+                    "17:10",
+                    "19:30",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "11:00",
+                    "13:15",
+                    "15:35",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "ugc-odeon-danton-paris": [
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:05",
+                    "14:00",
+                    "15:50",
+                    "17:45",
+                    "19:40",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:20",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:10",
+                    "14:05",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:45",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:50",
+                    "22:05"
+                ]
+            }
+        }
+    ],
+    "le-nouveau-latina-paris": [
+        {
+            "title": "Glory",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ],
+                "samedi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ],
+                "mardi": [
+                    "14:00",
+                    "15:50",
+                    "17:40",
+                    "19:30",
+                    "21:20"
+                ]
+            }
+        },
+        {
+            "title": "L'éveil de la permaculture",
+            "schedule": {
+                "mercredi": [
+                    "13:40"
+                ],
+                "jeudi": [
+                    "18:00"
+                ],
+                "vendredi": [
+                    "16:10"
+                ],
+                "samedi": [
+                    "12:00"
+                ],
+                "dimanche": [
+                    "17:40"
+                ],
+                "lundi": [
+                    "15:40",
+                    "21:50"
+                ],
+                "mardi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "15:10"
+                ],
+                "jeudi": [
+                    "15:30"
+                ],
+                "vendredi": [
+                    "13:40"
+                ],
+                "dimanche": [
+                    "19:20"
+                ],
+                "lundi": [
+                    "11:00",
+                    "17:10"
+                ],
+                "mardi": [
+                    "16:20"
+                ]
+            }
+        },
+        {
+            "title": "Heis",
+            "schedule": {
+                "mercredi": [
+                    "20:00"
+                ],
+                "jeudi": [
+                    "19:30"
+                ],
+                "dimanche": [
+                    "16:00"
+                ],
+                "lundi": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "Sage femme",
+            "schedule": {
+                "jeudi": [
+                    "13:20"
+                ],
+                "vendredi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ],
+                "mardi": [
+                    "13:10"
+                ]
+            }
+        },
+        {
+            "title": "Au long de rivière Fango",
+            "schedule": {
+                "mercredi": [
+                    "17:50"
+                ],
+                "jeudi": [
+                    "21:20"
+                ],
+                "samedi": [
+                    "12:50"
+                ],
+                "lundi": [
+                    "19:40"
+                ]
+            }
+        },
+        {
+            "title": "Moonlight",
+            "schedule": {
+                "vendredi": [
+                    "17:40"
+                ],
+                "dimanche": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "11:00"
+                ],
+                "mardi": [
+                    "17:50"
+                ]
+            }
+        },
+        {
+            "title": "Orpheline",
+            "schedule": {
+                "jeudi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "La Chouette entre veille et sommeil",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "La La Land",
+            "schedule": {
+                "vendredi": [
+                    "11:00"
+                ]
+            }
+        }
+    ],
+    "mk2-odeon-paris": [
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "mardi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "10:55",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:55",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "L'homme aux mille visages",
+            "schedule": {
+                "mercredi": [
+                    "10:50",
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:50",
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:50",
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:50",
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ],
+                "mardi": [
+                    "13:30",
+                    "16:20",
+                    "19:10",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "10:55",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ],
+                "vendredi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ],
+                "samedi": [
+                    "10:55",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ],
+                "dimanche": [
+                    "10:55",
+                    "13:30",
+                    "15:40",
+                    "17:50"
+                ],
+                "lundi": [
+                    "10:55",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ],
+                "mardi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Grave",
+            "schedule": {
+                "mercredi": [
+                    "22:05"
+                ],
+                "jeudi": [
+                    "22:05"
+                ],
+                "vendredi": [
+                    "22:05"
+                ],
+                "samedi": [
+                    "22:05"
+                ],
+                "dimanche": [
+                    "22:05"
+                ],
+                "lundi": [
+                    "22:05"
+                ],
+                "mardi": [
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "10:30"
+                ],
+                "dimanche": [
+                    "11:45"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "11:45"
+                ],
+                "dimanche": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:00"
+                ]
+            }
+        }
     ],
     "action-christine-paris": [
-        "Je la connaissais bien",
-        "In the Mood for Love",
-        "Drôle de frimousse",
-        "Voyage à deux",
-        "Beau fixe sur New York",
-        "Le château dans le ciel",
-        "Les sept femmes de Barberousse",
-        "Chantons sous la pluie",
-        "Utu",
-        "Un jour à New york",
-        "Indiscret",
-        "Le jardin des finzi contini",
-        "Mariage à l'italienne",
-        "Les enfants nous regardent",
-        "Sciuscia",
-        "Sept fois femme",
-        "L'Attrape-Rêves",
-        "Hier, aujourd'hui, demain",
-        "La Ciociara"
+        {
+            "title": "Mesdames et Messieurs, bonsoir",
+            "schedule": {
+                "mercredi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "jeudi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "vendredi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "samedi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "dimanche": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "lundi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ],
+                "mardi": [
+                    "15:45",
+                    "17:30",
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Je la connaissais bien",
+            "schedule": {
+                "mercredi": [
+                    "13:45"
+                ],
+                "jeudi": [
+                    "13:45"
+                ],
+                "vendredi": [
+                    "13:45",
+                    "21:30"
+                ],
+                "samedi": [
+                    "13:45",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "13:45",
+                    "21:30"
+                ],
+                "lundi": [
+                    "13:45"
+                ],
+                "mardi": [
+                    "13:45"
+                ]
+            }
+        },
+        {
+            "title": "Le château dans le ciel",
+            "schedule": {
+                "jeudi": [
+                    "21:30"
+                ],
+                "lundi": [
+                    "21:30"
+                ],
+                "mardi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "In the Mood for Love",
+            "schedule": {
+                "mercredi": [
+                    "21:30"
+                ],
+                "lundi": [
+                    "21:30"
+                ],
+                "mardi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Le voleur de bicyclette",
+            "schedule": {
+                "lundi": [
+                    "15:45",
+                    "19:45"
+                ]
+            }
+        },
+        {
+            "title": "Hier, aujourd'hui, demain",
+            "schedule": {
+                "mardi": [
+                    "15:30",
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Miracle à milan",
+            "schedule": {
+                "lundi": [
+                    "13:45",
+                    "17:45"
+                ]
+            }
+        },
+        {
+            "title": "Le jardin des finzi contini",
+            "schedule": {
+                "mardi": [
+                    "13:45",
+                    "17:45"
+                ]
+            }
+        },
+        {
+            "title": "Chantons sous la pluie",
+            "schedule": {
+                "vendredi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Drôle de frimousse",
+            "schedule": {
+                "jeudi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "El Soñador - The Dreamer",
+            "schedule": {
+                "samedi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Indiscret",
+            "schedule": {
+                "mercredi": [
+                    "14:00"
+                ]
+            }
+        }
+    ],
+    "publicis-champs-elysees-paris": [
+        {
+            "title": "Baahubali 2 : la conclusion",
+            "schedule": {
+                "vendredi": [
+                    "13:15",
+                    "16:40",
+                    "20:00"
+                ],
+                "samedi": [
+                    "14:15",
+                    "17:40"
+                ],
+                "dimanche": [
+                    "14:15",
+                    "17:40"
+                ],
+                "lundi": [
+                    "14:15",
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "11 Minutes",
+            "schedule": {
+                "mercredi": [
+                    "12:00"
+                ],
+                "jeudi": [
+                    "12:00"
+                ],
+                "vendredi": [
+                    "12:00"
+                ],
+                "samedi": [
+                    "12:00"
+                ],
+                "dimanche": [
+                    "19:15"
+                ],
+                "lundi": [
+                    "12:00"
+                ],
+                "mardi": [
+                    "12:00",
+                    "19:15"
+                ]
+            }
+        },
+        {
+            "title": "L'homme aux mille visages",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "18:30"
+                ],
+                "jeudi": [
+                    "18:30"
+                ],
+                "vendredi": [
+                    "18:30"
+                ],
+                "samedi": [
+                    "18:30"
+                ],
+                "lundi": [
+                    "18:30"
+                ],
+                "mardi": [
+                    "13:50",
+                    "18:30"
+                ]
+            }
+        },
+        {
+            "title": "Mes vies de chien",
+            "schedule": {
+                "mercredi": [
+                    "14:00"
+                ],
+                "jeudi": [
+                    "14:00"
+                ],
+                "vendredi": [
+                    "14:00"
+                ],
+                "samedi": [
+                    "14:00"
+                ],
+                "dimanche": [
+                    "15:05",
+                    "17:10"
+                ],
+                "lundi": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Ghost in the Shell",
+            "schedule": {
+                "mercredi": [
+                    "21:00"
+                ],
+                "jeudi": [
+                    "21:00"
+                ],
+                "vendredi": [
+                    "21:00"
+                ],
+                "samedi": [
+                    "21:00"
+                ],
+                "dimanche": [
+                    "21:00"
+                ],
+                "lundi": [
+                    "21:00"
+                ],
+                "mardi": [
+                    "21:00"
+                ]
+            }
+        },
+        {
+            "title": "L'affranchie",
+            "schedule": {
+                "mercredi": [
+                    "16:15"
+                ],
+                "jeudi": [
+                    "16:15"
+                ],
+                "vendredi": [
+                    "16:15"
+                ],
+                "samedi": [
+                    "16:15"
+                ],
+                "lundi": [
+                    "16:15"
+                ],
+                "mardi": [
+                    "16:15"
+                ]
+            }
+        },
+        {
+            "title": "Monsieur & Madame Adelman",
+            "schedule": {
+                "mercredi": [
+                    "16:20"
+                ],
+                "samedi": [
+                    "21:00"
+                ],
+                "dimanche": [
+                    "21:00"
+                ],
+                "lundi": [
+                    "21:00"
+                ],
+                "mardi": [
+                    "16:20",
+                    "21:00"
+                ]
+            }
+        },
+        {
+            "title": "L'éveil de la permaculture",
+            "schedule": {
+                "mercredi": [
+                    "12:00"
+                ],
+                "samedi": [
+                    "10:15"
+                ],
+                "lundi": [
+                    "12:00"
+                ],
+                "mardi": [
+                    "12:00"
+                ]
+            }
+        },
+        {
+            "title": "Baahubali : The Beginning",
+            "schedule": {
+                "jeudi": [
+                    "20:40"
+                ],
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "La Ronde des couleurs",
+            "schedule": {
+                "dimanche": [
+                    "10:00",
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Night and Day",
+            "schedule": {
+                "dimanche": [
+                    "12:15"
+                ]
+            }
+        }
+    ],
+    "mk2-hautefeuille-paris": [
+        {
+            "title": "À mon âge je me cache encore pour fumer",
+            "schedule": {
+                "mercredi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "samedi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "lundi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "mardi": [
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Noma au Japon : Réinventer le meilleur restaurant au monde",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "samedi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "lundi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ],
+                "mardi": [
+                    "11:30",
+                    "13:45",
+                    "15:50",
+                    "17:55",
+                    "20:00",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Les initiés",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "samedi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "lundi": [
+                    "11:20",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "mardi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "samedi": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "lundi": [
+                    "11:10",
+                    "16:20",
+                    "21:30"
+                ],
+                "mardi": [
+                    "11:10",
+                    "16:20"
+                ]
+            }
+        },
+        {
+            "title": "L'autre côté de l'espoir",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "19:20"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "19:20"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "19:20"
+                ],
+                "samedi": [
+                    "14:00",
+                    "19:20"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "19:20"
+                ],
+                "lundi": [
+                    "14:00",
+                    "19:20"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Le conte des sables d'or",
+            "schedule": {
+                "samedi": [
+                    "11:20",
+                    "12:30"
+                ],
+                "dimanche": [
+                    "11:20",
+                    "12:30"
+                ]
+            }
+        },
+        {
+            "title": "La vie passionnee de vincent van gogh",
+            "schedule": {
+                "mardi": [
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Tunnel",
+            "schedule": {
+                "mardi": [
+                    "19:45"
+                ]
+            }
+        }
+    ],
+    "ugc-maillot-paris": [
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "mardi": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "19:25",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "19:25",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:45",
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "19:25",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:45",
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "19:25",
+                    "21:50"
+                ],
+                "mardi": [
+                    "12:50",
+                    "15:00",
+                    "17:10",
+                    "19:25",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "samedi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "lundi": [
+                    "11:30",
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Emily Dickinson, a Quiet Passion",
+            "schedule": {
+                "dimanche": [
+                    "19:15"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "les-3-luxembourg-paris": [
+        {
+            "title": "Retour à Forbach",
+            "schedule": {
+                "mercredi": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "19:50"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "21:00"
+                ],
+                "vendredi": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "19:50"
+                ],
+                "samedi": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "19:50"
+                ],
+                "dimanche": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "19:50"
+                ],
+                "lundi": [
+                    "13:00",
+                    "14:40",
+                    "18:05",
+                    "19:50"
+                ],
+                "mardi": [
+                    "13:00",
+                    "14:40",
+                    "18:05"
+                ]
+            }
+        },
+        {
+            "title": "Lion",
+            "schedule": {
+                "mercredi": [
+                    "16:00",
+                    "21:00"
+                ],
+                "jeudi": [
+                    "15:00",
+                    "17:30"
+                ],
+                "vendredi": [
+                    "14:45",
+                    "17:00",
+                    "19:15"
+                ],
+                "samedi": [
+                    "14:45",
+                    "17:00",
+                    "19:15"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:15",
+                    "18:30"
+                ],
+                "lundi": [
+                    "14:45",
+                    "17:00",
+                    "19:15"
+                ],
+                "mardi": [
+                    "14:45",
+                    "17:00",
+                    "19:15"
+                ]
+            }
+        },
+        {
+            "title": "Monsieur & Madame Adelman",
+            "schedule": {
+                "mercredi": [
+                    "13:30",
+                    "18:15"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "13:30",
+                    "18:15"
+                ],
+                "samedi": [
+                    "13:30",
+                    "18:15"
+                ],
+                "dimanche": [
+                    "13:30",
+                    "18:15"
+                ],
+                "lundi": [
+                    "13:30",
+                    "18:15"
+                ],
+                "mardi": [
+                    "13:30",
+                    "18:15"
+                ]
+            }
+        },
+        {
+            "title": "La jeune fille et son aigle",
+            "schedule": {
+                "mercredi": [
+                    "13:00",
+                    "16:20"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "16:20"
+                ],
+                "vendredi": [
+                    "13:00",
+                    "16:20"
+                ],
+                "samedi": [
+                    "13:00",
+                    "16:20"
+                ],
+                "dimanche": [
+                    "16:20"
+                ],
+                "lundi": [
+                    "13:00",
+                    "16:20"
+                ],
+                "mardi": [
+                    "13:00",
+                    "16:20"
+                ]
+            }
+        },
+        {
+            "title": "Moonlight",
+            "schedule": {
+                "mercredi": [
+                    "20:00"
+                ],
+                "jeudi": [
+                    "20:00"
+                ],
+                "vendredi": [
+                    "20:00",
+                    "21:30"
+                ],
+                "samedi": [
+                    "20:00",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "20:00"
+                ],
+                "lundi": [
+                    "20:00",
+                    "21:30"
+                ],
+                "mardi": [
+                    "20:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Sage femme",
+            "schedule": {
+                "mercredi": [
+                    "16:00"
+                ],
+                "jeudi": [
+                    "16:00"
+                ],
+                "vendredi": [
+                    "16:00"
+                ],
+                "samedi": [
+                    "16:00"
+                ],
+                "dimanche": [
+                    "16:00"
+                ],
+                "lundi": [
+                    "16:00"
+                ],
+                "mardi": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "La La Land",
+            "schedule": {
+                "mercredi": [
+                    "20:30"
+                ],
+                "vendredi": [
+                    "20:30"
+                ],
+                "samedi": [
+                    "20:30"
+                ],
+                "dimanche": [
+                    "20:30"
+                ],
+                "lundi": [
+                    "20:30"
+                ],
+                "mardi": [
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Orpheline",
+            "schedule": {
+                "mercredi": [
+                    "21:30"
+                ],
+                "vendredi": [
+                    "21:30"
+                ],
+                "samedi": [
+                    "21:30"
+                ],
+                "dimanche": [
+                    "21:30"
+                ],
+                "lundi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Room",
+            "schedule": {
+                "jeudi": [
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Au-dessus des lois",
+            "schedule": {
+                "jeudi": [
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Promenons nous avec les petits loups",
+            "schedule": {
+                "mercredi": [
+                    "15:00"
+                ]
+            }
+        },
+        {
+            "title": "Tous au Larzac",
+            "schedule": {
+                "mercredi": [
+                    "18:30"
+                ]
+            }
+        },
+        {
+            "title": "Bientôt les jours heureux",
+            "schedule": {
+                "mardi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "le-desperado-paris-2": [
+        {
+            "title": "Tout va bien",
+            "schedule": {
+                "vendredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "L'opérateur",
+            "schedule": {
+                "jeudi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Masques",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Les mariés de l'an II",
+            "schedule": {
+                "lundi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "La cinquieme victime",
+            "schedule": {
+                "dimanche": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Pierrot le fou",
+            "schedule": {
+                "vendredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Le Voleur",
+            "schedule": {
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Le Doulos",
+            "schedule": {
+                "dimanche": [
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Cent Mille Dollars au soleil",
+            "schedule": {
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Juge coupable",
+            "schedule": {
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Les hommes du president",
+            "schedule": {
+                "lundi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "La Déchirure",
+            "schedule": {
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "A bout de souffle",
+            "schedule": {
+                "jeudi": [
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Le cerveau",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Massacre a la tronconneuse",
+            "schedule": {
+                "jeudi": [
+                    "22:00"
+                ],
+                "vendredi": [
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Le furet",
+            "schedule": {
+                "dimanche": [
+                    "14:00"
+                ]
+            }
+        }
+    ],
+    "cinema-la-clef-paris": [
+        {
+            "title": "Citoyen d'honneur",
+            "schedule": {
+                "mercredi": [
+                    "16:20"
+                ],
+                "jeudi": [
+                    "17:40"
+                ],
+                "vendredi": [
+                    "17:45"
+                ],
+                "samedi": [
+                    "17:15"
+                ],
+                "dimanche": [
+                    "20:30"
+                ],
+                "lundi": [
+                    "18:00"
+                ],
+                "mardi": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "One Kiss",
+            "schedule": {
+                "mercredi": [
+                    "18:00"
+                ],
+                "jeudi": [
+                    "19:00"
+                ],
+                "vendredi": [
+                    "21:15"
+                ],
+                "samedi": [
+                    "17:30"
+                ],
+                "dimanche": [
+                    "19:00"
+                ],
+                "lundi": [
+                    "16:00"
+                ],
+                "mardi": [
+                    "21:00"
+                ]
+            }
+        },
+        {
+            "title": "Félicité",
+            "schedule": {
+                "mercredi": [
+                    "18:30"
+                ],
+                "jeudi": [
+                    "21:00"
+                ],
+                "vendredi": [
+                    "19:00"
+                ],
+                "samedi": [
+                    "19:30"
+                ],
+                "dimanche": [
+                    "18:15"
+                ],
+                "lundi": [
+                    "20:15"
+                ],
+                "mardi": [
+                    "20:20"
+                ]
+            }
+        },
+        {
+            "title": "Paris la blanche",
+            "schedule": {
+                "jeudi": [
+                    "16:00"
+                ],
+                "vendredi": [
+                    "15:30"
+                ],
+                "samedi": [
+                    "15:30"
+                ],
+                "dimanche": [
+                    "15:30"
+                ],
+                "lundi": [
+                    "15:30"
+                ],
+                "mardi": [
+                    "16:10"
+                ]
+            }
+        },
+        {
+            "title": "Les mauvaises herbes",
+            "schedule": {
+                "mercredi": [
+                    "16:00"
+                ],
+                "vendredi": [
+                    "15:45"
+                ],
+                "samedi": [
+                    "15:30"
+                ],
+                "dimanche": [
+                    "16:10"
+                ],
+                "mardi": [
+                    "15:45"
+                ]
+            }
+        },
+        {
+            "title": "Paris pieds nus",
+            "schedule": {
+                "vendredi": [
+                    "17:15"
+                ],
+                "samedi": [
+                    "13:45"
+                ],
+                "dimanche": [
+                    "17:15"
+                ],
+                "lundi": [
+                    "19:10"
+                ]
+            }
+        },
+        {
+            "title": "United States of Love",
+            "schedule": {
+                "mercredi": [
+                    "14:15"
+                ],
+                "vendredi": [
+                    "13:45"
+                ],
+                "dimanche": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Moonlight",
+            "schedule": {
+                "samedi": [
+                    "21:45"
+                ],
+                "lundi": [
+                    "13:50"
+                ],
+                "mardi": [
+                    "17:45"
+                ]
+            }
+        },
+        {
+            "title": "Grave",
+            "schedule": {
+                "mercredi": [
+                    "20:50"
+                ],
+                "samedi": [
+                    "21:45"
+                ],
+                "lundi": [
+                    "17:45"
+                ]
+            }
+        },
+        {
+            "title": "Pris de court",
+            "schedule": {
+                "vendredi": [
+                    "13:50"
+                ],
+                "samedi": [
+                    "13:50"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "600 euros",
+            "schedule": {
+                "samedi": [
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Les sauteurs",
+            "schedule": {
+                "lundi": [
+                    "13:45"
+                ]
+            }
+        },
+        {
+            "title": "Noces",
+            "schedule": {
+                "dimanche": [
+                    "21:00"
+                ]
+            }
+        },
+        {
+            "title": "David Lynch: The Art Life",
+            "schedule": {
+                "dimanche": [
+                    "13:45"
+                ]
+            }
+        },
+        {
+            "title": "Le Royaume des chats",
+            "schedule": {
+                "mercredi": [
+                    "14:30"
+                ]
+            }
+        },
+        {
+            "title": "Clean, Shaven",
+            "schedule": {
+                "vendredi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Gimme Danger",
+            "schedule": {
+                "lundi": [
+                    "20:45"
+                ]
+            }
+        }
     ],
     "filmotheque-du-quartier-latin-paris": [
-        "De l'influence des rayons gamma sur le comportement des marguerites",
-        "Lumiere d'ete",
-        "Les Visiteurs du soir",
-        "Quai des brumes",
-        "Minnie & Moskovitz",
-        "2001 : l'Odyssée de l'espace",
-        "Love streams",
-        "Elena et les hommes",
-        "Eyes wide shut",
-        "Opening night",
-        "Husbands",
-        "La Règle du jeu",
-        "Les Affranchis",
-        "Le fleuve",
-        "Une femme sous influence",
-        "Shadows",
-        "Barry Lyndon",
-        "Le ciel est a vous",
-        "La belle et la bête",
-        "La petite lise",
-        "Remorques",
-        "Boudu sauvé des eaux",
-        "Shining",
-        "Un Américain à Paris",
-        "French cancan",
-        "Utu",
-        "Pattes blanches",
-        "La jeune fille à la perle",
-        "La bete humaine",
-        "Le Roi et l'oiseau ",
-        "L'amour d'une femme",
-        "Meurtre d'un bookmaker chinois"
+        {
+            "title": "Manhattan",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "De l'influence des rayons gamma sur le comportement des marguerites",
+            "schedule": {
+                "mercredi": [
+                    "15:40",
+                    "19:40"
+                ],
+                "jeudi": [
+                    "15:40",
+                    "19:40"
+                ],
+                "vendredi": [
+                    "15:40",
+                    "21:50"
+                ],
+                "samedi": [
+                    "18:30",
+                    "20:20"
+                ],
+                "dimanche": [
+                    "13:40",
+                    "17:40",
+                    "19:30"
+                ],
+                "lundi": [
+                    "13:40",
+                    "17:40",
+                    "19:30"
+                ],
+                "mardi": [
+                    "15:40",
+                    "19:40"
+                ]
+            }
+        },
+        {
+            "title": "Le rouge et le noir",
+            "schedule": {
+                "samedi": [
+                    "15:20"
+                ]
+            }
+        },
+        {
+            "title": "Lumiere d'ete",
+            "schedule": {
+                "dimanche": [
+                    "15:30"
+                ]
+            }
+        },
+        {
+            "title": "2001 : l'Odyssée de l'espace",
+            "schedule": {
+                "dimanche": [
+                    "21:20"
+                ]
+            }
+        },
+        {
+            "title": "Un Américain à Paris",
+            "schedule": {
+                "mardi": [
+                    "17:30"
+                ]
+            }
+        },
+        {
+            "title": "Shadows",
+            "schedule": {
+                "samedi": [
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Vingt-quatre heures de la vie d'une femme",
+            "schedule": {
+                "vendredi": [
+                    "19:50"
+                ]
+            }
+        },
+        {
+            "title": "La Vérité sur Bébé Donge",
+            "schedule": {
+                "mercredi": [
+                    "13:40"
+                ]
+            }
+        },
+        {
+            "title": "Faces",
+            "schedule": {
+                "jeudi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Utu",
+            "schedule": {
+                "jeudi": [
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "Eyes wide shut",
+            "schedule": {
+                "lundi": [
+                    "21:20"
+                ]
+            }
+        },
+        {
+            "title": "Le desordre et la nuit",
+            "schedule": {
+                "jeudi": [
+                    "13:50"
+                ]
+            }
+        },
+        {
+            "title": "Marie-octobre",
+            "schedule": {
+                "mercredi": [
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "Divine",
+            "schedule": {
+                "vendredi": [
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "Pot-bouille",
+            "schedule": {
+                "lundi": [
+                    "15:30"
+                ]
+            }
+        },
+        {
+            "title": "Gloria",
+            "schedule": {
+                "mercredi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Love streams",
+            "schedule": {
+                "mardi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "L'affaire des poisons",
+            "schedule": {
+                "vendredi": [
+                    "13:40"
+                ]
+            }
+        },
+        {
+            "title": "Madame de...",
+            "schedule": {
+                "mardi": [
+                    "13:40"
+                ]
+            }
+        },
+        {
+            "title": "Le plaisir",
+            "schedule": {
+                "samedi": [
+                    "13:30"
+                ]
+            }
+        }
+    ],
+    "mk2-parnasse-paris": [
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "jeudi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "vendredi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "samedi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "dimanche": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "lundi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ],
+                "mardi": [
+                    "15:45",
+                    "17:45",
+                    "19:45"
+                ]
+            }
+        },
+        {
+            "title": "Les figures de l'ombre",
+            "schedule": {
+                "mercredi": [
+                    "13:40",
+                    "19:05"
+                ],
+                "jeudi": [
+                    "13:40",
+                    "19:05"
+                ],
+                "vendredi": [
+                    "13:40",
+                    "19:05"
+                ],
+                "samedi": [
+                    "13:40",
+                    "19:05"
+                ],
+                "dimanche": [
+                    "13:40",
+                    "19:05"
+                ],
+                "lundi": [
+                    "13:40",
+                    "19:05"
+                ],
+                "mardi": [
+                    "13:40",
+                    "19:05"
+                ]
+            }
+        },
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:15"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:15"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:15"
+                ],
+                "samedi": [
+                    "16:15"
+                ],
+                "dimanche": [
+                    "16:15"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:15"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:15"
+                ]
+            }
+        },
+        {
+            "title": "Félicité",
+            "schedule": {
+                "mercredi": [
+                    "19:40"
+                ],
+                "jeudi": [
+                    "19:40"
+                ],
+                "vendredi": [
+                    "19:40"
+                ],
+                "samedi": [
+                    "19:40"
+                ],
+                "dimanche": [
+                    "19:40"
+                ],
+                "lundi": [
+                    "19:40"
+                ],
+                "mardi": [
+                    "19:40"
+                ]
+            }
+        },
+        {
+            "title": "Un profil pour deux",
+            "schedule": {
+                "mercredi": [
+                    "13:40"
+                ],
+                "jeudi": [
+                    "13:40"
+                ],
+                "vendredi": [
+                    "13:40"
+                ],
+                "samedi": [
+                    "13:40"
+                ],
+                "dimanche": [
+                    "13:40"
+                ],
+                "lundi": [
+                    "13:40"
+                ],
+                "mardi": [
+                    "13:40"
+                ]
+            }
+        },
+        {
+            "title": "Miss Sloane",
+            "schedule": {
+                "mercredi": [
+                    "21:45"
+                ],
+                "jeudi": [
+                    "21:45"
+                ],
+                "vendredi": [
+                    "21:45"
+                ],
+                "samedi": [
+                    "21:45"
+                ],
+                "dimanche": [
+                    "21:45"
+                ],
+                "lundi": [
+                    "21:45"
+                ],
+                "mardi": [
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Sage femme",
+            "schedule": {
+                "mercredi": [
+                    "17:15"
+                ],
+                "jeudi": [
+                    "17:15"
+                ],
+                "vendredi": [
+                    "17:15"
+                ],
+                "samedi": [
+                    "17:15"
+                ],
+                "dimanche": [
+                    "17:15"
+                ],
+                "lundi": [
+                    "17:15"
+                ],
+                "mardi": [
+                    "17:15"
+                ]
+            }
+        },
+        {
+            "title": "Grave",
+            "schedule": {
+                "mercredi": [
+                    "22:10"
+                ],
+                "jeudi": [
+                    "22:10"
+                ],
+                "vendredi": [
+                    "22:10"
+                ],
+                "samedi": [
+                    "22:10"
+                ],
+                "dimanche": [
+                    "22:10"
+                ],
+                "lundi": [
+                    "22:10"
+                ],
+                "mardi": [
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Logan",
+            "schedule": {
+                "mercredi": [
+                    "21:40"
+                ],
+                "jeudi": [
+                    "21:40"
+                ],
+                "vendredi": [
+                    "21:40"
+                ],
+                "samedi": [
+                    "21:40"
+                ],
+                "dimanche": [
+                    "21:40"
+                ],
+                "lundi": [
+                    "21:40"
+                ],
+                "mardi": [
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "16:00"
+                ],
+                "dimanche": [
+                    "14:45"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "14:45"
+                ],
+                "dimanche": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Le conte des sables d'or",
+            "schedule": {
+                "samedi": [
+                    "13:40"
+                ],
+                "dimanche": [
+                    "13:40"
+                ]
+            }
+        }
+    ],
+    "ugc-lyon-bastille-paris": [
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "mardi": [
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "samedi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "lundi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ],
+                "mardi": [
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "10:10",
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "samedi": [
+                    "10:10",
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "10:10",
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "lundi": [
+                    "10:10",
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ],
+                "mardi": [
+                    "13:00",
+                    "15:50",
+                    "18:40",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "C'est beau la vie quand on y pense",
+            "schedule": {
+                "mercredi": [
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35"
+                ]
+            }
+        },
+        {
+            "title": "Lion",
+            "schedule": {
+                "mercredi": [
+                    "22:00"
+                ],
+                "jeudi": [
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "samedi": [
+                    "22:00"
+                ],
+                "dimanche": [
+                    "22:00"
+                ],
+                "lundi": [
+                    "22:00"
+                ],
+                "mardi": [
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "mk2-quai-de-seine-paris": [
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:00",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Noma au Japon : Réinventer le meilleur restaurant au monde",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:20",
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:10",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "À mon âge je me cache encore pour fumer",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:15",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "samedi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "lundi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ],
+                "mardi": [
+                    "12:45",
+                    "15:00",
+                    "17:20",
+                    "19:40",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ],
+                "mardi": [
+                    "11:00",
+                    "13:45",
+                    "16:30",
+                    "19:10",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "L'éveil de la permaculture",
+            "schedule": {
+                "mercredi": [
+                    "11:00"
+                ],
+                "jeudi": [
+                    "11:00"
+                ],
+                "vendredi": [
+                    "11:00"
+                ],
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ],
+                "lundi": [
+                    "11:00"
+                ],
+                "mardi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "10:00"
+                ],
+                "jeudi": [
+                    "10:00"
+                ],
+                "vendredi": [
+                    "10:00"
+                ],
+                "samedi": [
+                    "10:00"
+                ],
+                "dimanche": [
+                    "10:00"
+                ],
+                "lundi": [
+                    "10:00"
+                ],
+                "mardi": [
+                    "10:00"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "10:00"
+                ],
+                "dimanche": [
+                    "11:20"
+                ]
+            }
+        },
+        {
+            "title": "L'école des lapins",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "11:20"
+                ],
+                "dimanche": [
+                    "10:00"
+                ]
+            }
+        }
+    ],
+    "le-cinema-des-cineastes-paris": [
+        {
+            "title": "Glory",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "samedi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "lundi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "mardi": [
+                    "11:30",
+                    "15:45",
+                    "17:45",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "samedi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "lundi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ],
+                "mardi": [
+                    "13:40",
+                    "15:40",
+                    "19:45",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:15",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "jeudi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "vendredi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "samedi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "lundi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ],
+                "mardi": [
+                    "11:30",
+                    "13:40",
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "Charlie et la chocolaterie",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ],
+                "lundi": [
+                    "11:00"
+                ]
+            }
+        }
+    ],
+    "ugc-montparnasse-paris": [
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:20",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:10",
+                    "12:30",
+                    "15:00",
+                    "17:20",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "11:10",
+                    "13:20",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "samedi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "lundi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ],
+                "mardi": [
+                    "09:50",
+                    "12:35",
+                    "15:35",
+                    "18:40",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ],
+                "mardi": [
+                    "10:05",
+                    "12:50",
+                    "15:50",
+                    "18:45",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ],
+                "mardi": [
+                    "10:30",
+                    "12:35",
+                    "14:50",
+                    "17:10"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "19:25",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "19:25",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "19:25",
+                    "21:55"
+                ],
+                "samedi": [
+                    "19:25",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "19:25",
+                    "21:55"
+                ],
+                "lundi": [
+                    "19:25",
+                    "21:55"
+                ],
+                "mardi": [
+                    "19:25",
+                    "21:55"
+                ]
+            }
+        }
+    ],
+    "le-lincoln-paris": [
+        {
+            "title": "La papesse Jeanne",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "samedi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "lundi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "mardi": [
+                    "13:50",
+                    "15:40",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Les initiés",
+            "schedule": {
+                "mercredi": [
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:00",
+                    "17:45",
+                    "19:30",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "jeudi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "vendredi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "samedi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "dimanche": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "lundi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ],
+                "mardi": [
+                    "13:55",
+                    "16:10",
+                    "18:20",
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "Le Tigre et les animaux de la forêt",
+            "schedule": {
+                "mercredi": [
+                    "14:30"
+                ]
+            }
+        }
+    ],
+    "mk2-quai-de-loire-paris": [
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:05",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "samedi": [
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ],
+                "mardi": [
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:55",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:50",
+                    "15:45",
+                    "18:45",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ],
+                "samedi": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "22:10"
+                ],
+                "lundi": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ],
+                "mardi": [
+                    "12:30",
+                    "14:55",
+                    "17:20",
+                    "19:45",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "18:40",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "13:30",
+                    "18:40",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "13:30",
+                    "18:40",
+                    "21:35"
+                ],
+                "samedi": [
+                    "18:40",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "18:40",
+                    "21:35"
+                ],
+                "lundi": [
+                    "18:40",
+                    "21:35"
+                ],
+                "mardi": [
+                    "10:00",
+                    "13:30",
+                    "18:40",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "12:15",
+                    "14:20",
+                    "16:30"
+                ],
+                "jeudi": [
+                    "16:30"
+                ],
+                "vendredi": [
+                    "16:30"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:15",
+                    "14:20",
+                    "16:30"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:15",
+                    "14:20",
+                    "16:30"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:15",
+                    "14:20",
+                    "16:30"
+                ],
+                "mardi": [
+                    "16:30"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:15"
+                ],
+                "samedi": [
+                    "10:15"
+                ],
+                "dimanche": [
+                    "10:15"
+                ],
+                "lundi": [
+                    "10:15"
+                ]
+            }
+        },
+        {
+            "title": "Le conte des sables d'or",
+            "schedule": {
+                "samedi": [
+                    "10:30"
+                ],
+                "dimanche": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "le-brady-paris": [
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "19:00"
+                ],
+                "jeudi": [
+                    "18:00"
+                ],
+                "vendredi": [
+                    "19:00"
+                ],
+                "samedi": [
+                    "20:30"
+                ],
+                "dimanche": [
+                    "14:30",
+                    "19:00"
+                ],
+                "lundi": [
+                    "14:30",
+                    "19:00"
+                ],
+                "mardi": [
+                    "14:30",
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "Au long de rivière Fango",
+            "schedule": {
+                "mercredi": [
+                    "14:10",
+                    "19:50"
+                ],
+                "jeudi": [
+                    "16:20"
+                ],
+                "vendredi": [
+                    "14:10",
+                    "19:50"
+                ],
+                "samedi": [
+                    "16:20"
+                ],
+                "dimanche": [
+                    "17:00"
+                ],
+                "lundi": [
+                    "17:00"
+                ],
+                "mardi": [
+                    "17:00"
+                ]
+            }
+        },
+        {
+            "title": "Les mauvaises herbes",
+            "schedule": {
+                "mercredi": [
+                    "16:20"
+                ],
+                "jeudi": [
+                    "19:50"
+                ],
+                "vendredi": [
+                    "17:00"
+                ],
+                "samedi": [
+                    "19:00"
+                ],
+                "dimanche": [
+                    "19:00"
+                ],
+                "lundi": [
+                    "19:00"
+                ],
+                "mardi": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "La La Land",
+            "schedule": {
+                "mercredi": [
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00"
+                ],
+                "vendredi": [
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:00"
+                ],
+                "dimanche": [
+                    "21:30"
+                ],
+                "lundi": [
+                    "21:30"
+                ],
+                "mardi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Paris pieds nus",
+            "schedule": {
+                "mercredi": [
+                    "18:20"
+                ],
+                "jeudi": [
+                    "18:20"
+                ],
+                "vendredi": [
+                    "16:30"
+                ],
+                "samedi": [
+                    "18:20"
+                ],
+                "dimanche": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "15:20"
+                ]
+            }
+        },
+        {
+            "title": "20th Century Women",
+            "schedule": {
+                "jeudi": [
+                    "14:10"
+                ],
+                "vendredi": [
+                    "12:10"
+                ],
+                "samedi": [
+                    "16:55"
+                ],
+                "dimanche": [
+                    "20:55"
+                ],
+                "lundi": [
+                    "16:55"
+                ],
+                "mardi": [
+                    "20:55"
+                ]
+            }
+        },
+        {
+            "title": "Citoyen d'honneur",
+            "schedule": {
+                "mercredi": [
+                    "11:45"
+                ],
+                "vendredi": [
+                    "14:20"
+                ],
+                "samedi": [
+                    "20:55"
+                ],
+                "dimanche": [
+                    "16:55"
+                ],
+                "lundi": [
+                    "20:55"
+                ],
+                "mardi": [
+                    "16:55"
+                ]
+            }
+        },
+        {
+            "title": "Pris de court",
+            "schedule": {
+                "mercredi": [
+                    "17:15"
+                ],
+                "jeudi": [
+                    "16:20"
+                ],
+                "vendredi": [
+                    "12:15"
+                ],
+                "dimanche": [
+                    "12:15"
+                ],
+                "mardi": [
+                    "13:50"
+                ]
+            }
+        },
+        {
+            "title": "Fantastic Birthday",
+            "schedule": {
+                "mercredi": [
+                    "14:00"
+                ],
+                "vendredi": [
+                    "18:10"
+                ],
+                "samedi": [
+                    "12:15"
+                ],
+                "lundi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Videodrome",
+            "schedule": {
+                "mercredi": [
+                    "21:45"
+                ],
+                "jeudi": [
+                    "21:45"
+                ],
+                "vendredi": [
+                    "21:45"
+                ],
+                "samedi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Blanka",
+            "schedule": {
+                "mercredi": [
+                    "15:30"
+                ],
+                "samedi": [
+                    "15:30"
+                ],
+                "dimanche": [
+                    "15:30"
+                ],
+                "lundi": [
+                    "15:30"
+                ]
+            }
+        },
+        {
+            "title": "Wallace & Gromit : les inventuriers",
+            "schedule": {
+                "samedi": [
+                    "10:30"
+                ],
+                "dimanche": [
+                    "10:30"
+                ],
+                "lundi": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Panique tous courts",
+            "schedule": {
+                "samedi": [
+                    "10:30"
+                ],
+                "dimanche": [
+                    "10:30"
+                ],
+                "lundi": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Terre de roses",
+            "schedule": {
+                "mercredi": [
+                    "12:10"
+                ],
+                "samedi": [
+                    "12:10"
+                ]
+            }
+        },
+        {
+            "title": "Les Fleurs Bleues",
+            "schedule": {
+                "jeudi": [
+                    "12:10"
+                ],
+                "dimanche": [
+                    "12:10"
+                ]
+            }
+        },
+        {
+            "title": "Your Name",
+            "schedule": {
+                "jeudi": [
+                    "12:10"
+                ],
+                "lundi": [
+                    "12:10"
+                ]
+            }
+        },
+        {
+            "title": "Paterson",
+            "schedule": {
+                "lundi": [
+                    "11:50"
+                ]
+            }
+        },
+        {
+            "title": "Noces",
+            "schedule": {
+                "mardi": [
+                    "12:10"
+                ]
+            }
+        },
+        {
+            "title": "Tramontane",
+            "schedule": {
+                "mardi": [
+                    "12:15"
+                ]
+            }
+        },
+        {
+            "title": "Qu'est-il arrivé à Baby Jane ?",
+            "schedule": {
+                "jeudi": [
+                    "20:30"
+                ]
+            }
+        }
+    ],
+    "mk2-gambetta-paris": [
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "10:35",
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:35",
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:35",
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:35",
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:35",
+                    "13:25",
+                    "15:35",
+                    "17:40",
+                    "19:55",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:45",
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:45",
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "mardi": [
+                    "13:20",
+                    "15:30",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "samedi": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:50",
+                    "13:00",
+                    "15:15",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:25",
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "samedi": [
+                    "10:25",
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "10:25",
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "lundi": [
+                    "10:25",
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ],
+                "mardi": [
+                    "10:25",
+                    "13:10",
+                    "15:55",
+                    "18:45",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:55",
+                    "13:30",
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:55",
+                    "13:30",
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "samedi": [
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "lundi": [
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:55",
+                    "13:30",
+                    "17:25",
+                    "19:40",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:15",
+                    "15:20"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:15",
+                    "15:20"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:15",
+                    "15:20"
+                ],
+                "samedi": [
+                    "13:15",
+                    "15:20"
+                ],
+                "dimanche": [
+                    "13:15",
+                    "15:20"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:15",
+                    "15:20"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:15",
+                    "15:20"
+                ]
+            }
+        },
+        {
+            "title": "Félicité",
+            "schedule": {
+                "mercredi": [
+                    "19:20",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "15:40",
+                    "19:20",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "15:40",
+                    "19:20",
+                    "21:50"
+                ],
+                "samedi": [
+                    "19:20",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "19:20",
+                    "21:50"
+                ],
+                "lundi": [
+                    "19:20",
+                    "21:50"
+                ],
+                "mardi": [
+                    "15:40",
+                    "19:20",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:55",
+                    "13:05",
+                    "15:10",
+                    "17:20"
+                ],
+                "samedi": [
+                    "10:55",
+                    "13:05",
+                    "15:10",
+                    "17:20"
+                ],
+                "dimanche": [
+                    "10:55",
+                    "13:05",
+                    "15:10",
+                    "17:20"
+                ],
+                "lundi": [
+                    "10:55",
+                    "13:05",
+                    "15:10",
+                    "17:20"
+                ]
+            }
+        },
+        {
+            "title": "Le conte des sables d'or",
+            "schedule": {
+                "samedi": [
+                    "10:50"
+                ],
+                "dimanche": [
+                    "10:50"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "10:35"
+                ],
+                "dimanche": [
+                    "10:35"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "11:45"
+                ],
+                "dimanche": [
+                    "11:45"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "samedi": [
+                    "10:30"
+                ],
+                "dimanche": [
+                    "10:30"
+                ]
+            }
+        }
+    ],
+    "majestic-bastille-paris": [
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "samedi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "lundi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "mardi": [
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "samedi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "lundi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ],
+                "mardi": [
+                    "14:00",
+                    "16:30",
+                    "19:00",
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "L'homme aux mille visages",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ],
+                "lundi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "L'éveil de la permaculture",
+            "schedule": {
+                "lundi": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Le Tigre et les animaux de la forêt",
+            "schedule": {
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        }
+    ],
+    "mk2-beaubourg-paris": [
+        {
+            "title": "Adieu Mandalay",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Noma au Japon : Réinventer le meilleur restaurant au monde",
+            "schedule": {
+                "mercredi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "samedi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "lundi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ],
+                "mardi": [
+                    "11:25",
+                    "13:25",
+                    "15:35",
+                    "17:45",
+                    "19:55",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Les initiés",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "samedi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "lundi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ],
+                "mardi": [
+                    "09:20",
+                    "13:35",
+                    "15:45",
+                    "17:55",
+                    "20:05",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "La papesse Jeanne",
+            "schedule": {
+                "mercredi": [
+                    "11:30",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "11:30",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "11:30",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "11:30",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "11:30",
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:30",
+                    "15:40",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Retour à Forbach",
+            "schedule": {
+                "mercredi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "samedi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "lundi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ],
+                "mardi": [
+                    "13:35",
+                    "15:30",
+                    "17:30",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Taipei Story",
+            "schedule": {
+                "mercredi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "jeudi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "vendredi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "samedi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "dimanche": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "lundi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ],
+                "mardi": [
+                    "09:25",
+                    "14:30",
+                    "17:05"
+                ]
+            }
+        },
+        {
+            "title": "Grave",
+            "schedule": {
+                "mercredi": [
+                    "19:45",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "22:00"
+                ],
+                "vendredi": [
+                    "19:45",
+                    "22:00"
+                ],
+                "samedi": [
+                    "19:45",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "19:45",
+                    "22:00"
+                ],
+                "lundi": [
+                    "19:45",
+                    "22:00"
+                ],
+                "mardi": [
+                    "19:45",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "One Kiss",
+            "schedule": {
+                "mercredi": [
+                    "11:20"
+                ],
+                "jeudi": [
+                    "11:20"
+                ],
+                "vendredi": [
+                    "11:20"
+                ],
+                "samedi": [
+                    "11:20"
+                ],
+                "dimanche": [
+                    "11:20"
+                ],
+                "lundi": [
+                    "11:20"
+                ],
+                "mardi": [
+                    "11:20"
+                ]
+            }
+        },
+        {
+            "title": "Lettres de la guerre",
+            "schedule": {
+                "mercredi": [
+                    "09:10"
+                ],
+                "jeudi": [
+                    "09:10"
+                ],
+                "vendredi": [
+                    "09:10"
+                ],
+                "samedi": [
+                    "09:10"
+                ],
+                "dimanche": [
+                    "09:10"
+                ],
+                "lundi": [
+                    "09:10"
+                ],
+                "mardi": [
+                    "09:10"
+                ]
+            }
+        },
+        {
+            "title": "Félicité",
+            "schedule": {
+                "mercredi": [
+                    "12:05"
+                ],
+                "jeudi": [
+                    "12:05"
+                ],
+                "vendredi": [
+                    "12:05"
+                ],
+                "samedi": [
+                    "12:05"
+                ],
+                "dimanche": [
+                    "12:05"
+                ],
+                "lundi": [
+                    "12:05"
+                ],
+                "mardi": [
+                    "12:05"
+                ]
+            }
+        },
+        {
+            "title": "L'Opéra",
+            "schedule": {
+                "mercredi": [
+                    "19:40"
+                ],
+                "vendredi": [
+                    "19:40"
+                ],
+                "samedi": [
+                    "19:40"
+                ],
+                "dimanche": [
+                    "19:40"
+                ],
+                "lundi": [
+                    "19:40"
+                ],
+                "mardi": [
+                    "19:40"
+                ]
+            }
+        },
+        {
+            "title": "La belle occasion",
+            "schedule": {
+                "jeudi": [
+                    "11:40"
+                ],
+                "vendredi": [
+                    "11:40"
+                ],
+                "dimanche": [
+                    "11:40"
+                ],
+                "lundi": [
+                    "11:40"
+                ]
+            }
+        },
+        {
+            "title": "La vengeresse",
+            "schedule": {
+                "jeudi": [
+                    "09:50"
+                ],
+                "vendredi": [
+                    "09:50"
+                ],
+                "dimanche": [
+                    "09:50"
+                ],
+                "lundi": [
+                    "09:50"
+                ]
+            }
+        },
+        {
+            "title": "Jours de France",
+            "schedule": {
+                "mercredi": [
+                    "10:30"
+                ],
+                "samedi": [
+                    "10:30"
+                ],
+                "mardi": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "United States of Love",
+            "schedule": {
+                "jeudi": [
+                    "11:15"
+                ],
+                "mardi": [
+                    "11:15"
+                ]
+            }
+        },
+        {
+            "title": "David Lynch: The Art Life",
+            "schedule": {
+                "jeudi": [
+                    "09:15"
+                ]
+            }
+        },
+        {
+            "title": "Paris pieds nus",
+            "schedule": {
+                "lundi": [
+                    "09:25"
+                ]
+            }
+        },
+        {
+            "title": "Certaines femmes",
+            "schedule": {
+                "vendredi": [
+                    "09:05"
+                ]
+            }
+        },
+        {
+            "title": "Moonlight",
+            "schedule": {
+                "samedi": [
+                    "09:05"
+                ]
+            }
+        },
+        {
+            "title": "Paris est une fête",
+            "schedule": {
+                "mardi": [
+                    "09:15"
+                ]
+            }
+        },
+        {
+            "title": "Pas comme des loups",
+            "schedule": {
+                "dimanche": [
+                    "09:50"
+                ]
+            }
+        },
+        {
+            "title": "The Fits",
+            "schedule": {
+                "mercredi": [
+                    "09:35"
+                ]
+            }
+        }
+    ],
+    "grand-action-paris": [
+        {
+            "title": "The Lost City of Z",
+            "schedule": {
+                "mercredi": [
+                    "18:30",
+                    "21:15"
+                ],
+                "jeudi": [
+                    "18:30",
+                    "21:15"
+                ],
+                "vendredi": [
+                    "16:20",
+                    "19:00"
+                ],
+                "samedi": [
+                    "14:00",
+                    "21:15"
+                ],
+                "lundi": [
+                    "14:00",
+                    "21:15"
+                ],
+                "mardi": [
+                    "18:45"
+                ]
+            }
+        },
+        {
+            "title": "Certaines femmes",
+            "schedule": {
+                "jeudi": [
+                    "16:15"
+                ],
+                "vendredi": [
+                    "21:40"
+                ],
+                "dimanche": [
+                    "14:55"
+                ],
+                "lundi": [
+                    "19:10"
+                ],
+                "mardi": [
+                    "11:45",
+                    "16:15"
+                ]
+            }
+        },
+        {
+            "title": "A Dangerous method",
+            "schedule": {
+                "mercredi": [
+                    "16:00"
+                ],
+                "vendredi": [
+                    "14:00"
+                ],
+                "samedi": [
+                    "18:00"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "A History of Violence",
+            "schedule": {
+                "vendredi": [
+                    "18:00"
+                ],
+                "dimanche": [
+                    "21:55"
+                ],
+                "mardi": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Spider",
+            "schedule": {
+                "mercredi": [
+                    "21:55"
+                ],
+                "jeudi": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Les Promesses de l'ombre",
+            "schedule": {
+                "jeudi": [
+                    "18:00"
+                ],
+                "vendredi": [
+                    "21:30"
+                ],
+                "samedi": [
+                    "16:05"
+                ]
+            }
+        },
+        {
+            "title": "Maps To The Stars",
+            "schedule": {
+                "vendredi": [
+                    "15:55"
+                ],
+                "samedi": [
+                    "14:00"
+                ],
+                "mardi": [
+                    "21:15"
+                ]
+            }
+        },
+        {
+            "title": "Cosmopolis",
+            "schedule": {
+                "mercredi": [
+                    "14:00"
+                ],
+                "jeudi": [
+                    "16:00"
+                ],
+                "mardi": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Manchester by the Sea",
+            "schedule": {
+                "jeudi": [
+                    "11:30"
+                ],
+                "lundi": [
+                    "16:40"
+                ]
+            }
+        },
+        {
+            "title": "La Nuit nous appartient",
+            "schedule": {
+                "vendredi": [
+                    "11:45"
+                ],
+                "mardi": [
+                    "21:30"
+                ]
+            }
+        },
+        {
+            "title": "Two lovers",
+            "schedule": {
+                "jeudi": [
+                    "14:00"
+                ],
+                "dimanche": [
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "La Chouette entre veille et sommeil",
+            "schedule": {
+                "mercredi": [
+                    "14:30"
+                ],
+                "dimanche": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "The Immigrant",
+            "schedule": {
+                "mercredi": [
+                    "12:00"
+                ],
+                "mardi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Valmont",
+            "schedule": {
+                "mercredi": [
+                    "15:45"
+                ]
+            }
+        },
+        {
+            "title": "Occupe-toi d'Amélie !",
+            "schedule": {
+                "lundi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "M. butterfly",
+            "schedule": {
+                "mercredi": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Le jour des rois",
+            "schedule": {
+                "lundi": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "John mac cabe",
+            "schedule": {
+                "dimanche": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "En haut des marches",
+            "schedule": {
+                "lundi": [
+                    "16:30"
+                ]
+            }
+        },
+        {
+            "title": "Premier Rendez-_vous",
+            "schedule": {
+                "dimanche": [
+                    "17:00"
+                ]
+            }
+        },
+        {
+            "title": "Madame de...",
+            "schedule": {
+                "dimanche": [
+                    "19:30"
+                ]
+            }
+        },
+        {
+            "title": "Marie-octobre",
+            "schedule": {
+                "dimanche": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Loving",
+            "schedule": {
+                "vendredi": [
+                    "14:00"
+                ]
+            }
+        },
+        {
+            "title": "Close Encounters with Vilmos Zsigmond",
+            "schedule": {
+                "dimanche": [
+                    "16:45"
+                ]
+            }
+        },
+        {
+            "title": "8 femmes",
+            "schedule": {
+                "samedi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "le-lucernaire-cinema-d-art-et-essai-paris": [
+        {
+            "title": "L'éveil de la permaculture",
+            "schedule": {
+                "mercredi": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "jeudi": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "samedi": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "lundi": [
+                    "14:00",
+                    "17:20",
+                    "20:40"
+                ],
+                "mardi": [
+                    "14:00",
+                    "17:20"
+                ]
+            }
+        },
+        {
+            "title": "Parfaites",
+            "schedule": {
+                "mercredi": [
+                    "16:00",
+                    "19:10"
+                ],
+                "jeudi": [
+                    "16:00",
+                    "19:10"
+                ],
+                "vendredi": [
+                    "16:00",
+                    "19:10"
+                ],
+                "samedi": [
+                    "16:00",
+                    "19:10"
+                ],
+                "dimanche": [
+                    "16:00",
+                    "19:10"
+                ],
+                "lundi": [
+                    "16:00",
+                    "19:10"
+                ],
+                "mardi": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Et les mistrals gagnants",
+            "schedule": {
+                "mercredi": [
+                    "19:00"
+                ],
+                "jeudi": [
+                    "15:50"
+                ],
+                "vendredi": [
+                    "15:50",
+                    "19:00"
+                ],
+                "samedi": [
+                    "19:00"
+                ],
+                "dimanche": [
+                    "19:00"
+                ],
+                "lundi": [
+                    "15:50"
+                ],
+                "mardi": [
+                    "15:50"
+                ]
+            }
+        },
+        {
+            "title": "11 Minutes",
+            "schedule": {
+                "mercredi": [
+                    "19:00"
+                ],
+                "jeudi": [
+                    "19:00"
+                ],
+                "vendredi": [
+                    "14:00",
+                    "19:00"
+                ],
+                "samedi": [
+                    "15:30"
+                ],
+                "dimanche": [
+                    "14:00",
+                    "19:00"
+                ],
+                "lundi": [
+                    "19:00"
+                ]
+            }
+        },
+        {
+            "title": "Silence",
+            "schedule": {
+                "mercredi": [
+                    "16:00"
+                ],
+                "jeudi": [
+                    "16:00"
+                ],
+                "vendredi": [
+                    "16:00"
+                ],
+                "samedi": [
+                    "19:30"
+                ],
+                "dimanche": [
+                    "16:00"
+                ],
+                "lundi": [
+                    "16:00"
+                ],
+                "mardi": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Mauvais élèves",
+            "schedule": {
+                "mercredi": [
+                    "17:30"
+                ],
+                "jeudi": [
+                    "17:30"
+                ],
+                "vendredi": [
+                    "17:30"
+                ],
+                "samedi": [
+                    "17:30"
+                ],
+                "dimanche": [
+                    "17:30"
+                ],
+                "lundi": [
+                    "17:30"
+                ]
+            }
+        },
+        {
+            "title": "Pris de court",
+            "schedule": {
+                "mercredi": [
+                    "20:40"
+                ],
+                "jeudi": [
+                    "20:40"
+                ],
+                "vendredi": [
+                    "20:40"
+                ],
+                "samedi": [
+                    "17:15"
+                ],
+                "dimanche": [
+                    "20:40"
+                ],
+                "lundi": [
+                    "20:40"
+                ]
+            }
+        },
+        {
+            "title": "United States of Love",
+            "schedule": {
+                "jeudi": [
+                    "13:50"
+                ],
+                "vendredi": [
+                    "13:50"
+                ],
+                "samedi": [
+                    "13:50"
+                ],
+                "dimanche": [
+                    "14:00"
+                ],
+                "lundi": [
+                    "13:50"
+                ],
+                "mardi": [
+                    "13:50"
+                ]
+            }
+        },
+        {
+            "title": "Le banquet des fraudeurs",
+            "schedule": {
+                "mercredi": [
+                    "11:30"
+                ],
+                "jeudi": [
+                    "11:30"
+                ],
+                "samedi": [
+                    "11:30"
+                ],
+                "dimanche": [
+                    "11:30"
+                ],
+                "mardi": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "Elle",
+            "schedule": {
+                "mercredi": [
+                    "11:30"
+                ],
+                "jeudi": [
+                    "11:30"
+                ],
+                "vendredi": [
+                    "11:30"
+                ],
+                "samedi": [
+                    "11:30"
+                ],
+                "mardi": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "La Confession",
+            "schedule": {
+                "mercredi": [
+                    "20:40"
+                ],
+                "vendredi": [
+                    "20:40"
+                ],
+                "samedi": [
+                    "20:40"
+                ],
+                "dimanche": [
+                    "20:40"
+                ]
+            }
+        },
+        {
+            "title": "Wallace & Gromit : les inventuriers",
+            "schedule": {
+                "mercredi": [
+                    "16:00"
+                ],
+                "samedi": [
+                    "16:00"
+                ],
+                "dimanche": [
+                    "16:00"
+                ]
+            }
+        },
+        {
+            "title": "Monte là-dessus",
+            "schedule": {
+                "mercredi": [
+                    "14:20"
+                ],
+                "samedi": [
+                    "14:00"
+                ],
+                "dimanche": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "Les sauteurs",
+            "schedule": {
+                "vendredi": [
+                    "11:30"
+                ],
+                "mardi": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Le Grand Miracle",
+            "schedule": {
+                "samedi": [
+                    "11:30"
+                ],
+                "dimanche": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "Quand les bulles éclatent",
+            "schedule": {
+                "vendredi": [
+                    "11:30"
+                ],
+                "mardi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "mk2-nation-paris": [
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:50",
+                    "13:50",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:20",
+                    "12:40",
+                    "15:00",
+                    "17:30",
+                    "19:45",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "10:40",
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "samedi": [
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "lundi": [
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ],
+                "mardi": [
+                    "10:40",
+                    "12:50",
+                    "15:10",
+                    "17:20",
+                    "19:30",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "13:20",
+                    "15:30",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "10:30"
+                ],
+                "jeudi": [
+                    "10:30"
+                ],
+                "vendredi": [
+                    "10:30"
+                ],
+                "lundi": [
+                    "10:30"
+                ],
+                "mardi": [
+                    "10:30"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:40"
+                ],
+                "samedi": [
+                    "10:40"
+                ],
+                "dimanche": [
+                    "10:40"
+                ],
+                "lundi": [
+                    "10:40"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "11:30"
+                ],
+                "dimanche": [
+                    "10:10"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "10:10"
+                ],
+                "dimanche": [
+                    "11:30"
+                ]
+            }
+        },
+        {
+            "title": "L'Histoire du petit Paolo",
+            "schedule": {
+                "jeudi": [
+                    "09:30"
+                ]
+            }
+        }
+    ],
+    "ugc-george-v-paris": [
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "20:10",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "C'est beau la vie quand on y pense",
+            "schedule": {
+                "mercredi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10",
+                    "20:10",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:10",
+                    "12:10",
+                    "14:10",
+                    "16:10",
+                    "18:10"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:05",
+                    "15:20",
+                    "17:35",
+                    "19:50",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "samedi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "lundi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ],
+                "mardi": [
+                    "10:20",
+                    "13:10",
+                    "16:00",
+                    "18:50",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:10"
+                ]
+            }
+        },
+        {
+            "title": "Lion",
+            "schedule": {
+                "mercredi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:20",
+                    "14:40",
+                    "17:05",
+                    "19:30",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "10:10",
+                    "12:20",
+                    "14:40",
+                    "17:05",
+                    "19:30",
+                    "21:55"
+                ],
+                "samedi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "19:30",
+                    "21:55"
+                ],
+                "lundi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "mardi": [
+                    "10:10",
+                    "12:20",
+                    "14:40",
+                    "17:05",
+                    "19:30",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ],
+                "jeudi": [
+                    "10:15"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ],
+                "mardi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Les figures de l'ombre",
+            "schedule": {
+                "mercredi": [
+                    "19:00",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "19:00",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "19:00",
+                    "21:40"
+                ],
+                "samedi": [
+                    "19:00",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "19:00",
+                    "21:40"
+                ],
+                "lundi": [
+                    "19:00",
+                    "21:40"
+                ],
+                "mardi": [
+                    "19:00",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "14:10",
+                    "16:50"
+                ],
+                "samedi": [
+                    "10:45",
+                    "14:10",
+                    "16:50"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "14:10",
+                    "16:50"
+                ],
+                "lundi": [
+                    "10:45",
+                    "14:10",
+                    "16:50"
+                ]
+            }
+        },
+        {
+            "title": "On m'appelle Jeeg le robot",
+            "schedule": {
+                "mardi": [
+                    "20:15"
+                ]
+            }
+        }
+    ],
+    "ugc-cine-cite-la-defense-paris": [
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "samedi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "lundi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ],
+                "mardi": [
+                    "09:35",
+                    "10:30",
+                    "12:20",
+                    "13:20",
+                    "15:10",
+                    "16:10",
+                    "18:00",
+                    "19:00",
+                    "20:50",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "12:25",
+                    "15:20",
+                    "18:20",
+                    "21:15"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ],
+                "samedi": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ],
+                "lundi": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ],
+                "mardi": [
+                    "09:35",
+                    "10:15",
+                    "12:25",
+                    "13:10",
+                    "15:20",
+                    "16:05",
+                    "18:20",
+                    "21:15"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ],
+                "mardi": [
+                    "10:30",
+                    "12:30",
+                    "14:30",
+                    "16:30",
+                    "18:30",
+                    "20:30",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "samedi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "lundi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ],
+                "mardi": [
+                    "09:35",
+                    "11:40",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:25"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "samedi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "lundi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ],
+                "mardi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:10",
+                    "18:20",
+                    "20:25",
+                    "22:25"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "samedi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "lundi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "mardi": [
+                    "09:45",
+                    "11:50",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "samedi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "lundi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ],
+                "mardi": [
+                    "10:10",
+                    "12:10",
+                    "14:15",
+                    "16:20",
+                    "18:25",
+                    "20:30",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:40",
+                    "13:00",
+                    "15:20",
+                    "17:40",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:30",
+                    "12:50",
+                    "15:10",
+                    "17:30",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:45",
+                    "13:30",
+                    "16:15",
+                    "19:00",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "samedi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "dimanche": [
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "lundi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ],
+                "mardi": [
+                    "09:50",
+                    "11:45",
+                    "16:00",
+                    "20:15"
+                ]
+            }
+        },
+        {
+            "title": "Ghost in the Shell",
+            "schedule": {
+                "mercredi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "13:45",
+                    "18:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "13:00",
+                    "17:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "C'est beau la vie quand on y pense",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ],
+                "samedi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "15:30"
+                ],
+                "lundi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ],
+                "mardi": [
+                    "11:00",
+                    "15:30",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "La petite sirène",
+            "schedule": {
+                "dimanche": [
+                    "10:00"
+                ]
+            }
+        }
+    ],
+    "ugc-cine-cite-paris-19-paris": [
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "samedi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "lundi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ],
+                "mardi": [
+                    "09:35",
+                    "10:30",
+                    "12:15",
+                    "13:30",
+                    "15:00",
+                    "16:15",
+                    "17:45",
+                    "19:00",
+                    "20:30",
+                    "21:40"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:10",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:05",
+                    "18:05",
+                    "20:10",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "samedi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "lundi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ],
+                "mardi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:45",
+                    "17:45",
+                    "19:45",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "13:55",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "À mon âge je me cache encore pour fumer",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "samedi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "lundi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ],
+                "mardi": [
+                    "09:35",
+                    "11:35",
+                    "13:35",
+                    "15:35",
+                    "17:35",
+                    "19:35",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "samedi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "lundi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ],
+                "mardi": [
+                    "09:45",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:20",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:30",
+                    "13:00",
+                    "15:15",
+                    "17:35",
+                    "19:50",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00",
+                    "19:25",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "jeudi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "vendredi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "samedi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "dimanche": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "lundi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ],
+                "mardi": [
+                    "09:55",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "samedi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "lundi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ],
+                "mardi": [
+                    "10:15",
+                    "13:00",
+                    "16:00",
+                    "18:45",
+                    "21:35"
+                ]
+            }
+        },
+        {
+            "title": "Power Rangers",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ],
+                "samedi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "12:00",
+                    "14:30"
+                ],
+                "lundi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ],
+                "mardi": [
+                    "09:35",
+                    "12:00",
+                    "14:30",
+                    "17:00"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "14:45"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "14:45"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "14:45"
+                ],
+                "samedi": [
+                    "10:00",
+                    "14:45"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "14:45"
+                ],
+                "lundi": [
+                    "10:00",
+                    "14:45"
+                ],
+                "mardi": [
+                    "10:00",
+                    "14:45"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "12:00",
+                    "16:45"
+                ],
+                "jeudi": [
+                    "12:00",
+                    "16:45"
+                ],
+                "vendredi": [
+                    "12:00",
+                    "16:45"
+                ],
+                "samedi": [
+                    "12:00",
+                    "16:45"
+                ],
+                "dimanche": [
+                    "12:00",
+                    "16:45"
+                ],
+                "lundi": [
+                    "12:00",
+                    "16:45"
+                ],
+                "mardi": [
+                    "12:00",
+                    "16:45"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "19:40",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "21:55"
+                ],
+                "vendredi": [
+                    "19:40",
+                    "21:55"
+                ],
+                "samedi": [
+                    "19:40",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "19:40",
+                    "21:55"
+                ],
+                "lundi": [
+                    "19:40",
+                    "21:55"
+                ],
+                "mardi": [
+                    "19:40",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Bienvenue au Gondwana",
+            "schedule": {
+                "mercredi": [
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "samedi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "lundi": [
+                    "19:30",
+                    "21:55"
+                ],
+                "mardi": [
+                    "19:30",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "On m'appelle Jeeg le robot",
+            "schedule": {
+                "mardi": [
+                    "19:55"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:30"
+                ]
+            }
+        },
+        {
+            "title": "De toutes mes forces",
+            "schedule": {
+                "dimanche": [
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Dracula",
+            "schedule": {
+                "jeudi": [
+                    "20:00"
+                ]
+            }
+        }
+    ],
+    "mk2-bibliotheque-paris": [
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "samedi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "lundi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ],
+                "mardi": [
+                    "10:00",
+                    "11:00",
+                    "13:00",
+                    "14:00",
+                    "16:00",
+                    "17:00",
+                    "19:00",
+                    "20:00",
+                    "21:45"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:00",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "samedi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "lundi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "mardi": [
+                    "09:40",
+                    "11:45",
+                    "13:50",
+                    "15:55",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:15",
+                    "14:15",
+                    "16:15",
+                    "18:15",
+                    "20:15",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "samedi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "lundi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ],
+                "mardi": [
+                    "09:50",
+                    "11:50",
+                    "13:50",
+                    "15:50",
+                    "17:50",
+                    "19:50",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:05",
+                    "12:05",
+                    "14:05",
+                    "16:05",
+                    "18:05",
+                    "20:05",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "samedi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "lundi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ],
+                "mardi": [
+                    "09:40",
+                    "11:40",
+                    "13:35",
+                    "15:40",
+                    "17:50",
+                    "20:05",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "samedi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "lundi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ],
+                "mardi": [
+                    "09:45",
+                    "11:45",
+                    "13:45",
+                    "15:50",
+                    "17:50",
+                    "20:00",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:55",
+                    "12:20",
+                    "14:45",
+                    "17:10",
+                    "19:35",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Ghost in the Shell",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "samedi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "lundi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ],
+                "mardi": [
+                    "11:00",
+                    "13:15",
+                    "15:30",
+                    "17:45",
+                    "20:00",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "samedi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "lundi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ],
+                "mardi": [
+                    "11:35",
+                    "13:45",
+                    "15:50",
+                    "18:00",
+                    "20:05",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ],
+                "mardi": [
+                    "10:30",
+                    "12:45",
+                    "15:10",
+                    "17:30",
+                    "19:45",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "19:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:40",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "jeudi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "vendredi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "samedi": [
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "dimanche": [
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "lundi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ],
+                "mardi": [
+                    "09:45",
+                    "12:10",
+                    "14:35",
+                    "17:00",
+                    "19:30",
+                    "21:55"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "samedi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "lundi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ],
+                "mardi": [
+                    "10:00",
+                    "13:00",
+                    "16:00",
+                    "19:00",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "jeudi": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "vendredi": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "samedi": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "dimanche": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "lundi": [
+                    "10:30",
+                    "12:30",
+                    "15:00"
+                ],
+                "mardi": [
+                    "10:30",
+                    "15:00"
+                ]
+            }
+        },
+        {
+            "title": "Split",
+            "schedule": {
+                "mercredi": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ],
+                "jeudi": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ],
+                "vendredi": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ],
+                "samedi": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ],
+                "dimanche": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ],
+                "lundi": [
+                    "16:50",
+                    "19:15",
+                    "21:50"
+                ]
+            }
+        },
+        {
+            "title": "Lion",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "15:00",
+                    "19:45"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "15:00",
+                    "19:45"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "15:00",
+                    "19:45"
+                ],
+                "samedi": [
+                    "15:00",
+                    "19:45"
+                ],
+                "dimanche": [
+                    "15:00"
+                ],
+                "lundi": [
+                    "10:15",
+                    "15:00",
+                    "19:45"
+                ],
+                "mardi": [
+                    "19:45"
+                ]
+            }
+        },
+        {
+            "title": "Grave",
+            "schedule": {
+                "mercredi": [
+                    "17:30",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "17:30",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "17:30",
+                    "22:10"
+                ],
+                "samedi": [
+                    "17:30",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "17:30",
+                    "22:10"
+                ],
+                "lundi": [
+                    "17:30",
+                    "22:10"
+                ],
+                "mardi": [
+                    "17:30",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "La jeune fille et son aigle",
+            "schedule": {
+                "mercredi": [
+                    "11:20",
+                    "13:05"
+                ],
+                "jeudi": [
+                    "11:20",
+                    "13:05"
+                ],
+                "vendredi": [
+                    "11:20",
+                    "13:05"
+                ],
+                "samedi": [
+                    "11:20",
+                    "13:05"
+                ],
+                "dimanche": [
+                    "11:20",
+                    "13:05"
+                ],
+                "lundi": [
+                    "11:20",
+                    "13:05"
+                ],
+                "mardi": [
+                    "11:20",
+                    "13:05"
+                ]
+            }
+        },
+        {
+            "title": "Boule et Bill 2",
+            "schedule": {
+                "mercredi": [
+                    "09:45"
+                ],
+                "jeudi": [
+                    "09:45"
+                ],
+                "vendredi": [
+                    "09:45"
+                ],
+                "samedi": [
+                    "09:45"
+                ],
+                "dimanche": [
+                    "09:45"
+                ],
+                "lundi": [
+                    "09:45"
+                ],
+                "mardi": [
+                    "09:45"
+                ]
+            }
+        },
+        {
+            "title": "L'écureuil qui voyait tout en vert",
+            "schedule": {
+                "samedi": [
+                    "11:00"
+                ],
+                "dimanche": [
+                    "10:00"
+                ]
+            }
+        },
+        {
+            "title": "Le petit monde de bahador",
+            "schedule": {
+                "samedi": [
+                    "10:00"
+                ],
+                "dimanche": [
+                    "11:00"
+                ]
+            }
+        },
+        {
+            "title": "Shining",
+            "schedule": {
+                "mardi": [
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:00"
+                ]
+            }
+        }
     ],
     "ugc-cine-cite-bercy-paris": [
-        "Fast & Furious 8",
-        "Life - Origine Inconnue",
-        "The Young Lady",
-        "Corporate",
-        "Baby Boss",
-        "Sous le même toit",
-        "C'est beau la vie quand on y pense",
-        "Bienvenue au Gondwana",
-        "Mes vies de chien",
-        "À bras ouverts",
-        "Ghost in the Shell",
-        "Gold",
-        "Cessez le feu",
-        "La belle et la bête",
-        "Power Rangers",
-        "Un profil pour deux",
-        "Les figures de l'ombre",
-        "Boule et Bill 2",
-        "La jeune fille et son aigle",
-        "Les Schtroumpfs et le village perdu",
-        "Ma vie de courgette",
-        "Les gardiens de la galaxie 2",
-        "La Fille de neige (Viva l'Opéra)",
-        "La colère d'un homme patient"
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:30",
+                    "10:20",
+                    "12:00",
+                    "13:30",
+                    "14:50",
+                    "16:20",
+                    "17:40",
+                    "19:10",
+                    "20:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "samedi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "lundi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ],
+                "mardi": [
+                    "09:50",
+                    "11:55",
+                    "14:00",
+                    "16:05",
+                    "18:10",
+                    "20:15",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:05",
+                    "14:10",
+                    "16:15",
+                    "18:20",
+                    "20:25",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "samedi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "dimanche": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "lundi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ],
+                "mardi": [
+                    "09:50",
+                    "12:20",
+                    "14:25",
+                    "16:30",
+                    "18:35",
+                    "20:40",
+                    "22:40"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:50",
+                    "12:15",
+                    "15:05",
+                    "17:55",
+                    "19:30",
+                    "20:45",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:35",
+                    "11:45",
+                    "13:35",
+                    "15:50",
+                    "18:05",
+                    "20:20",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "samedi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "lundi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ],
+                "mardi": [
+                    "09:35",
+                    "11:35",
+                    "14:00",
+                    "16:00",
+                    "18:00",
+                    "20:00",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "jeudi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "vendredi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "samedi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "dimanche": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40"
+                ],
+                "lundi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:40",
+                    "21:40"
+                ],
+                "mardi": [
+                    "09:40",
+                    "11:40",
+                    "13:40",
+                    "15:40",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "20:25",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:35",
+                    "11:45",
+                    "13:55",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "samedi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "lundi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ],
+                "mardi": [
+                    "10:15",
+                    "12:40",
+                    "15:05",
+                    "17:30",
+                    "19:55",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "jeudi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "vendredi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "samedi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "dimanche": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "lundi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ],
+                "mardi": [
+                    "10:00",
+                    "12:10",
+                    "14:20",
+                    "16:30",
+                    "18:35",
+                    "20:40"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "samedi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "lundi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ],
+                "mardi": [
+                    "09:40",
+                    "12:10",
+                    "14:40",
+                    "17:10",
+                    "19:40",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Ghost in the Shell",
+            "schedule": {
+                "mercredi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:55",
+                    "13:10",
+                    "15:30",
+                    "17:50",
+                    "20:10",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "samedi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "lundi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ],
+                "mardi": [
+                    "09:35",
+                    "12:05",
+                    "14:35",
+                    "17:05",
+                    "19:35",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "jeudi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "vendredi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "samedi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "dimanche": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "lundi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40",
+                    "19:50",
+                    "22:40"
+                ],
+                "mardi": [
+                    "10:20",
+                    "13:20",
+                    "15:30",
+                    "17:40"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "samedi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "lundi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ],
+                "mardi": [
+                    "10:15",
+                    "14:10",
+                    "16:50",
+                    "19:30",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "jeudi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "vendredi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "samedi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "dimanche": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "lundi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ],
+                "mardi": [
+                    "09:30",
+                    "11:30",
+                    "13:30",
+                    "15:30",
+                    "17:30"
+                ]
+            }
+        },
+        {
+            "title": "Les figures de l'ombre",
+            "schedule": {
+                "mercredi": [
+                    "22:00"
+                ],
+                "jeudi": [
+                    "22:00"
+                ],
+                "vendredi": [
+                    "22:00"
+                ],
+                "samedi": [
+                    "22:00"
+                ],
+                "dimanche": [
+                    "22:00"
+                ],
+                "lundi": [
+                    "22:00"
+                ],
+                "mardi": [
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Tunnel",
+            "schedule": {
+                "mardi": [
+                    "20:50"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "dimanche": [
+                    "20:50"
+                ]
+            }
+        }
+    ],
+    "ugc-cine-cite-les-halles-paris": [
+        {
+            "title": "Les gardiens de la galaxie vol. 2",
+            "schedule": {
+                "mercredi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "jeudi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "vendredi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "samedi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "dimanche": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "lundi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ],
+                "mardi": [
+                    "09:15",
+                    "09:45",
+                    "11:50",
+                    "13:15",
+                    "14:25",
+                    "16:00",
+                    "17:00",
+                    "18:50",
+                    "19:35",
+                    "21:45",
+                    "22:10"
+                ]
+            }
+        },
+        {
+            "title": "La colère d'un homme patient",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Aurore",
+            "schedule": {
+                "mercredi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:15",
+                    "11:05",
+                    "13:20",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Sous le même toit",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Jour J",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "The Young Lady",
+            "schedule": {
+                "mercredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "À mon âge je me cache encore pour fumer",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:20",
+                    "11:10",
+                    "13:15",
+                    "15:10",
+                    "17:00",
+                    "18:50",
+                    "20:40",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Baby Boss",
+            "schedule": {
+                "mercredi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:00",
+                    "11:05",
+                    "13:00",
+                    "14:55",
+                    "16:50",
+                    "18:45",
+                    "20:40",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Corporate",
+            "schedule": {
+                "mercredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "C'est beau la vie quand on y pense",
+            "schedule": {
+                "mercredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "18:40",
+                    "20:35",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:05",
+                    "11:00",
+                    "12:55",
+                    "14:50",
+                    "16:45",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Le procès du siècle",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:20",
+                    "11:30",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Life - Origine Inconnue",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:20",
+                    "11:30",
+                    "14:00",
+                    "16:10",
+                    "18:15",
+                    "20:25",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Je danserai si je veux",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "Ghost in the Shell",
+            "schedule": {
+                "mercredi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:15",
+                    "11:25",
+                    "13:50",
+                    "16:05",
+                    "18:15",
+                    "20:25",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Cessez le feu",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:20",
+                    "13:50",
+                    "16:00",
+                    "18:10",
+                    "20:20",
+                    "22:30"
+                ]
+            }
+        },
+        {
+            "title": "À voix haute : la force de la parole",
+            "schedule": {
+                "mercredi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "jeudi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "vendredi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "samedi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "dimanche": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "lundi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ],
+                "mardi": [
+                    "09:05",
+                    "11:05",
+                    "14:35",
+                    "16:35",
+                    "18:35",
+                    "20:35",
+                    "22:35"
+                ]
+            }
+        },
+        {
+            "title": "Gold",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:35",
+                    "14:00",
+                    "16:20",
+                    "20:00",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Après la tempête",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "samedi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "lundi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ],
+                "mardi": [
+                    "09:20",
+                    "11:45",
+                    "14:10",
+                    "17:25",
+                    "19:50",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "La belle et la bête",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "samedi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "lundi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ],
+                "mardi": [
+                    "09:20",
+                    "11:50",
+                    "14:45",
+                    "17:15",
+                    "19:45",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Lion",
+            "schedule": {
+                "mercredi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "jeudi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "vendredi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "samedi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "dimanche": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "lundi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ],
+                "mardi": [
+                    "09:05",
+                    "11:25",
+                    "15:25",
+                    "17:45",
+                    "20:05",
+                    "22:25"
+                ]
+            }
+        },
+        {
+            "title": "Les Schtroumpfs et le village perdu",
+            "schedule": {
+                "mercredi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "jeudi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "vendredi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "samedi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "dimanche": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "lundi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ],
+                "mardi": [
+                    "09:15",
+                    "11:00",
+                    "12:45",
+                    "14:30",
+                    "16:15",
+                    "18:00"
+                ]
+            }
+        },
+        {
+            "title": "Django",
+            "schedule": {
+                "mercredi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "samedi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "lundi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ],
+                "mardi": [
+                    "09:15",
+                    "11:35",
+                    "14:00",
+                    "16:30",
+                    "19:30",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Fast & Furious 8",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "samedi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "lundi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ],
+                "mardi": [
+                    "09:10",
+                    "11:45",
+                    "14:20",
+                    "16:55",
+                    "19:30",
+                    "22:05"
+                ]
+            }
+        },
+        {
+            "title": "La jeune fille et son aigle",
+            "schedule": {
+                "mercredi": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ],
+                "jeudi": [
+                    "09:10",
+                    "13:45",
+                    "15:35"
+                ],
+                "vendredi": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ],
+                "samedi": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ],
+                "dimanche": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ],
+                "lundi": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ],
+                "mardi": [
+                    "09:10",
+                    "13:45",
+                    "15:35",
+                    "20:10"
+                ]
+            }
+        },
+        {
+            "title": "Split",
+            "schedule": {
+                "mercredi": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ],
+                "jeudi": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ],
+                "vendredi": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ],
+                "samedi": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ],
+                "dimanche": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ],
+                "lundi": [
+                    "11:20",
+                    "17:30",
+                    "22:20"
+                ],
+                "mardi": [
+                    "11:20",
+                    "17:30",
+                    "20:00",
+                    "22:20"
+                ]
+            }
+        },
+        {
+            "title": "Ma vie de courgette",
+            "schedule": {
+                "mercredi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "jeudi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "vendredi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "samedi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "dimanche": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "lundi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ],
+                "mardi": [
+                    "13:05",
+                    "16:10",
+                    "18:40"
+                ]
+            }
+        },
+        {
+            "title": "Les figures de l'ombre",
+            "schedule": {
+                "mercredi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "samedi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "lundi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ],
+                "mardi": [
+                    "11:10",
+                    "17:30",
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "Patients",
+            "schedule": {
+                "mercredi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "jeudi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "vendredi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "samedi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "dimanche": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "lundi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ],
+                "mardi": [
+                    "09:00",
+                    "13:35",
+                    "20:00"
+                ]
+            }
+        },
+        {
+            "title": "Mes vies de chien",
+            "schedule": {
+                "mercredi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "jeudi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "vendredi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "samedi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "dimanche": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "lundi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ],
+                "mardi": [
+                    "09:20",
+                    "13:40",
+                    "15:35"
+                ]
+            }
+        },
+        {
+            "title": "Logan",
+            "schedule": {
+                "mercredi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "jeudi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "vendredi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "samedi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "dimanche": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "lundi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ],
+                "mardi": [
+                    "11:00",
+                    "17:25",
+                    "22:00"
+                ]
+            }
+        },
+        {
+            "title": "Et les mistrals gagnants",
+            "schedule": {
+                "mercredi": [
+                    "13:45",
+                    "15:45"
+                ],
+                "jeudi": [
+                    "13:45",
+                    "15:45"
+                ],
+                "vendredi": [
+                    "13:45",
+                    "15:45"
+                ],
+                "samedi": [
+                    "13:45",
+                    "15:45"
+                ],
+                "dimanche": [
+                    "13:45",
+                    "15:45"
+                ],
+                "lundi": [
+                    "13:45",
+                    "15:45"
+                ],
+                "mardi": [
+                    "13:45",
+                    "15:45"
+                ]
+            }
+        },
+        {
+            "title": "L'homme aux mille visages",
+            "schedule": {
+                "mercredi": [
+                    "19:45",
+                    "22:15"
+                ],
+                "jeudi": [
+                    "19:45",
+                    "22:15"
+                ],
+                "vendredi": [
+                    "19:45",
+                    "22:15"
+                ],
+                "samedi": [
+                    "19:45",
+                    "22:15"
+                ],
+                "dimanche": [
+                    "19:45",
+                    "22:15"
+                ],
+                "lundi": [
+                    "19:45",
+                    "22:15"
+                ],
+                "mardi": [
+                    "22:15"
+                ]
+            }
+        },
+        {
+            "title": "De toutes mes forces",
+            "schedule": {
+                "mardi": [
+                    "20:15"
+                ]
+            }
+        },
+        {
+            "title": "Tunnel",
+            "schedule": {
+                "lundi": [
+                    "19:50"
+                ]
+            }
+        },
+        {
+            "title": "Get Out",
+            "schedule": {
+                "mardi": [
+                    "19:00"
+                ]
+            }
+        }
     ]
 }
