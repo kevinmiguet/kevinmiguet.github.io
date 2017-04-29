@@ -26,7 +26,8 @@ function initMap() {
     streetViewControl: false,
     rotateControl: false,
     fullscreenControl: false,
-    clickableIcons: false
+    clickableIcons: false,
+    gestureHandling: "greedy"
   });
 
   for (let dot in cinemas) {
@@ -38,7 +39,7 @@ function initMap() {
         null, /* size is determined at runtime */
         null, /* origin is 0,0 */
         null, /* anchor is bottom center of the scaled image */
-        new google.maps.Size(28, 28)
+        new google.maps.Size(45, 45)
       ),
     });
 
