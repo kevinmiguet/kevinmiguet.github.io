@@ -1,14 +1,20 @@
 const loadContent = (cineName) => {
 
   let message = "";
-  if (schedules[cineName].length != 0) {
+  if (schedules.results[cineName].length != 0) {
     message += `<h1>${cineName}</h1>\n`
-    schedules[cineName].forEach((film) => {
-      message += `<h2>${film.title}</h2>`;
-      for (let jour in film.schedule) {
-        message += ` \t\t${jour} : \n \t\t\t${film.schedule[jour]} \n`
+    schedules.results[cineName].forEach((film) => {
+      message += `<li class="mdl-list__item mdl-list__item--two-line">
+        <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
 
+        <span class="mdl-list__item-primary-content">
+         <span>${film.title}</span>`;
+
+      for (let jour in film.schedule) {
+        message += `<span class="mdl-list__item-sub-title">${jour} : ${film.schedule[jour]}</span>`;
       }
+
+      message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
     });
   }
 
@@ -44,7 +50,7 @@ function initMap() {
     });
 
     marker.addListener('click', () => {
-      $("#message").html(loadContent(cinemas[dot].name))
+      $("#movieList").html(loadContent(cinemas[dot].name))
     });
   }
 

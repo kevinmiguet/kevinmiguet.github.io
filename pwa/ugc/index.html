@@ -1,15 +1,18 @@
 <head>
   <meta charset="UTF-8">
   <link rel='manifest' href='manifest.json'>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles/styles.css">
   <script type="text/javascript" charset="UTF-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script type="text/javascript" charset="UTF-8" src="data.js"></script>
   <script type="text/javascript" charset="UTF-8" src="main.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="./styles/material.css">
 </head>
-
+<style>
+.demo-list-two {
+  width: 100%;
+}
+</style>
 
 <script>
   if ('serviceWorker' in navigator) {
@@ -27,5 +30,9 @@
 
 <h3>Où aller avec ma carte UGC ?</h3>
 <div id="map"></div>
-<div id="message"></div>
+<div id="message">
+<ul id= "movieList"class="demo-list-two mdl-list">
+  
+</ul>
+</div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCly3OBmDB5hYLp74JIlmNaG4_GQbil9ww&callback=initMap"></script>
