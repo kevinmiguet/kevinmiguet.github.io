@@ -1,3 +1,4 @@
+const joursSemaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
 const loadContent = (cineName) => {
 
   let message = "";
@@ -10,9 +11,12 @@ const loadContent = (cineName) => {
         <span class="mdl-list__item-primary-content">
          <span>${film.title}</span>`;
 
-      for (let jour in film.schedule) {
-        message += `<span class="mdl-list__item-sub-title">${jour} : ${film.schedule[jour]}</span>`;
-      }
+      joursSemaine.forEach((jour) => {
+        if (film.schedule[jour]) {
+          message += `<span class="mdl-list__item-sub-title">${jour} : ${film.schedule[jour]}</span>`;
+        }
+      })
+
 
       message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
     });
@@ -33,9 +37,12 @@ function initMap() {
     rotateControl: false,
     fullscreenControl: false,
     clickableIcons: false,
-    gestureHandling: "greedy"
+    gestureHandling: "greedy",
   });
-
+  google.maps.event.addListener(map, "click", () => {
+    $('#message').hide();
+  })
+  // generate markers
   for (let dot in cinemas) {
     var marker = new google.maps.Marker({
       position: cinemas[dot],
@@ -50,7 +57,8 @@ function initMap() {
     });
 
     marker.addListener('click', () => {
-      $("#movieList").html(loadContent(cinemas[dot].name))
+      $("#movieList").html(loadContent(cinemas[dot].name));
+      $("#message").show();
     });
   }
 

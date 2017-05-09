@@ -8,11 +8,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./styles/material.css">
 </head>
-<style>
-.demo-list-two {
-  width: 100%;
-}
-</style>
 
 <script>
   if ('serviceWorker' in navigator) {
@@ -26,13 +21,13 @@
       });
     });
   }
-</script>
 
-<h3>Où aller avec ma carte UGC ?</h3>
-<div id="map"></div>
-<div id="message">
-<ul id= "movieList"class="demo-list-two mdl-list">
-  
-</ul>
+</script>
+<div id="wrapper">
+  <div id="map"></div>
+  <div id="message">
+    <ul id="movieList" class="demo-list-two mdl-list">
+    </ul>
+  </div>
 </div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCly3OBmDB5hYLp74JIlmNaG4_GQbil9ww&callback=initMap"></script>
