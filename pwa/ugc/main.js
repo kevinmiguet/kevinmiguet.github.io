@@ -39,8 +39,9 @@ function initMap() {
     clickableIcons: false,
     gestureHandling: "greedy",
   });
+  // hide the menu when clicking the map
   google.maps.event.addListener(map, "click", () => {
-    $('#message').hide();
+    $("#message").width("0%");    
   })
   // generate markers
   for (let dot in cinemas) {
@@ -58,7 +59,7 @@ function initMap() {
 
     marker.addListener('click', () => {
       $("#movieList").html(loadContent(cinemas[dot].name));
-      $("#message").show();
+      $("#message").width("30%");
     });
   }
 
