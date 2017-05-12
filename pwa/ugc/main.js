@@ -30,6 +30,7 @@ const generateMenu = (cineName) => {
         // <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
       message += `<li class="mdl-list__item mdl-list__item--two-line">
         <span class="mdl-list__item-primary-content">
+        <img src="./images/marker.png" width="128" height="170">
          <span>${film.title}</span>`;
       joursSemaine.forEach((jour) => {
         if (film.schedule[jour]) {
