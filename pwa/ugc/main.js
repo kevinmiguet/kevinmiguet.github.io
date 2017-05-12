@@ -27,8 +27,8 @@ const generateMenu = (cineName) => {
     let message = "";
     message += `<div class="menuInfo" id="${cineName}" ><h1>${cineName}</h1>\n`
     schedules.results[cineName].forEach((film) => {
+        // <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
       message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
          <span>${film.title}</span>`;
       joursSemaine.forEach((jour) => {
