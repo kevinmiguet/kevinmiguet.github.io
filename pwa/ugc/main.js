@@ -4,7 +4,7 @@ function hideMenu(){
 
 function showMenu(element){
   $(".menuInfo").hide();  
-  $(`#${element.name}`).show();
+  $(`#${element.dataName}`).show();
   $("#message").width("30%");
 }
 
@@ -20,17 +20,17 @@ const googleMapConfig = {
     fullscreenControl: false,
     clickableIcons: false,
     gestureHandling: "greedy",
-}
+  }
 
 const generateMenu = (cineName) => {
-  if (schedules.results[cineName] && schedules.results[cineName].length != 0) {
     let message = "";
-    message += `<div class="menuInfo" id="${cineName}" ><h1>${cineName}</h1>\n`
-    schedules.results[cineName].forEach((film) => {
-        // <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
+    message += `<div class="menuInfo" id="${cineName.dataName}" ><h1>${cineName.name}</h1>\n`
+  if (schedules.results[cineName.name] && schedules.results[cineName.name].length != 0) {
+    schedules.results[cineName.name].forEach((film) => {
+      console.log(film)
       message += `<li class="mdl-list__item mdl-list__item--two-line">
+        <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
-        <img src="./images/marker.png" width="128" height="170">
          <span>${film.title}</span>`;
       joursSemaine.forEach((jour) => {
         if (film.schedule[jour]) {
@@ -39,14 +39,14 @@ const generateMenu = (cineName) => {
       })
       message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
     });
-    message+=`</div>`
-  $("#movieList").append(message);
   }
+  message+=`</div>`
+  $("#movieList").append(message);
 }
 
 function generateMarker (element, map) {
   var marker = new google.maps.Marker({
-    position: element,
+    position: element.position,
     map: map,
     icon: new google.maps.MarkerImage(
     "./images/marker.png",
@@ -70,6 +70,6 @@ function initMap() {
   // generate markers
   cinemas.forEach((cinema) => {
     generateMarker(cinema, map);
-    generateMenu(cinema.name);
+    generateMenu(cinema);
   });
 }
