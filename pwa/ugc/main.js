@@ -22,11 +22,11 @@ const googleMapConfig = {
     gestureHandling: "greedy",
   }
 
-const generateMenu = (cineName) => {
+const generateMenu = (cinema) => {
     let message = "";
-    message += `<div class="menuInfo" id="${cineName.dataName}" ><h1>${cineName.name}</h1>\n`
-  if (schedules.results[cineName.name] && schedules.results[cineName.name].length != 0) {
-    schedules.results[cineName.name].forEach((film) => {
+    message += `<div class="menuInfo" id="${cinema.dataName}" ><h1>${cinema.name}</h1>\n`
+  if (schedules.results[cinema.dataName] && schedules.results[cinema.dataName].length != 0) {
+    schedules.results[cinema.dataName].forEach((film) => {
       console.log(film)
       message += `<li class="mdl-list__item mdl-list__item--two-line">
         <img src="https://image.tmdb.org/t/p/original${schedules.posters[film.title]}" width="128" height="170">
