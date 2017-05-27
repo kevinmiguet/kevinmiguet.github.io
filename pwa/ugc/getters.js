@@ -1,3 +1,9 @@
+function normalize (string){
+  return string
+  .toLowerCase()
+  .replace()
+}
+
 // Criteria can be [Director|Country|Actor|Genre]
 function filterBy(criteria, value) {
   return this.movies
