@@ -5,7 +5,7 @@ function hideMenu() {
 function showMenu(element) {
   $(".menuInfo").hide();
   $(`#${element.dataName}`).show();
-  $("#message").width("80%");
+  $("#message").width("30%");
 }
 
 const joursSemaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
