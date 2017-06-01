@@ -29,9 +29,8 @@
     transition: width 0.5s;
   }
 
-@media screen and (max-width: 480px){
-    /* Ici du code s'appliquant aux écrans de moins de 480 pixels de large */
-      #map {
+@media screen and (max-width: 700px){
+  #map {
     height: 100%;
     width: 100%;
   }
