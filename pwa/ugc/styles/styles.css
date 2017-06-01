@@ -10,7 +10,14 @@
     position: relative;
   }
   
-  #message {
+  #sideBar.open {
+    width:30%
+  }
+  #sideBar.closed {
+    width:0%
+  }
+
+  #sideBar {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -21,3 +28,38 @@
     width: 0%;
     transition: width 0.5s;
   }
+
+@media screen and (max-width: 480px){
+    /* Ici du code s'appliquant aux écrans de moins de 480 pixels de large */
+      #map {
+    height: 100%;
+    width: 100%;
+  }
+  .demo-list-two {
+    width: 100%;
+  }
+  
+  #wrapper {
+    position: relative;
+  }
+  
+  #sideBar.open {
+    width:80%
+  }
+  #sideBar.closed {
+    width:0%
+  }
+
+  #sideBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    background-color: white;
+    overflow: scroll;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s;
+  }
+
+}

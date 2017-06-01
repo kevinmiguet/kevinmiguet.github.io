@@ -1,11 +1,11 @@
 function hideMenu() {
-  $("#message").width("0%");
+  $("#sideBar").removeClass("open");
 }
 
 function showMenu(element) {
   $(".menuInfo").hide();
   $(`#${element.dataName}`).show();
-  $("#message").width("30%");
+  $("#sideBar").addClass("open");
 }
 
 const joursSemaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
@@ -19,7 +19,7 @@ const googleMapConfig = {
   rotateControl: false,
   fullscreenControl: false,
   clickableIcons: false,
-  gestureHandling: "greedy",
+  gestureHandling: "greedy"
 }
 
 const generateMenu = (cinema) => {
