@@ -8,6 +8,7 @@
   
   #wrapper {
     position: relative;
+    font: 'Roboto';
   }
   
   #sideBar.open {
@@ -28,7 +29,12 @@
     width: 0%;
     transition: width 0.5s;
   }
-
+  .movieTitle {
+    line-height: 18px;
+  }
+  .movieInfo {
+    padding-top: 15px;
+  }
 @media screen and (max-width: 700px){
   #map {
     height: 100%;

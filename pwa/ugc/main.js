@@ -8,7 +8,7 @@ function showMenu(element) {
   $("#sideBar").addClass("open");
 }
 
-const joursSemaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+const joursSemaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 const googleMapConfig = {
   zoom: 12,
   center: { "lat": 48.858949, "lng": 2.346373 },
@@ -22,6 +22,25 @@ const googleMapConfig = {
   gestureHandling: "greedy"
 }
 
+function getDaysforSchedulePattern(id, days) {
+  return Object.keys(days).filter((day) => {
+    return days[day] === id;
+  }).map((day) => {
+    return joursSemaine[day]
+  }).join(", ")
+}
+
+function generateSchedule(film) {
+  console.log(film)
+  if (film.schedule.tlj) {
+    return `<span class="mdl-list__item-sub-title"> Tous les jours : ${film.schedule.schedulePatterns[0]}</span>`
+  } else {
+    return film.schedule.schedulePatterns.map((schedulePattern, id) => {
+      return `<span class="mdl-list__item-sub-title"> ${getDaysforSchedulePattern(id, film.schedule.days)} : ${schedulePattern.join(", ")}</span>`
+    }).join("")
+  }
+}
+
 const generateMenu = (cinema) => {
   let message = "";
   message += `<div class="menuInfo" id="${cinema.dataName}" ><h1>${cinema.name}</h1>\n`
@@ -30,13 +49,9 @@ const generateMenu = (cinema) => {
       message += `<li class="mdl-list__item mdl-list__item--two-line">
         <img src="https://image.tmdb.org/t/p/original${movieData.movies[film.id].data}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
-         <span>${movieData.movies[film.id].title}</span>`;
-      joursSemaine.forEach((jour) => {
-        if (film.schedule[jour]) {
-          message += `<span class="mdl-list__item-sub-title">${jour} : ${film.schedule[jour]}</span>`;
-        }
-      })
-      message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
+         <div class="movieTitle"> ${movieData.movies[film.id].title}</div><div class ="movieInfo">`;
+      message += generateSchedule(film)
+      message += `</div></span><span class="mdl-list__item-secondary-content"></span></li>`
     });
   }
   message += `</div>`
