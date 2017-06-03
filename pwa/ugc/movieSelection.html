@@ -1,24 +1,23 @@
 <head>
   <meta charset="UTF-8">
-  <link rel='manifest' href='manifest.json'>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="./styles/styles.css">
   <script type="text/javascript" charset="UTF-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script type="text/javascript" charset="UTF-8" src="data.js"></script>
   <script type="text/javascript" charset="UTF-8" src="horaires.js"></script>
   <script type="text/javascript" charset="UTF-8" src="main.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="getters.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./styles/material.css">
 </head>
-
+<body>
 <div id="wrapper">
-  <div id="movieList">
-    <ul id="movieList2" class="demo-list-two mdl-list">
-    </ul>
-  </div>
-  
-</div>
+    <div id="movieList"></div>
+ </div>
+ <script type="text/javascript">
 
-<script type="text/javascript">
-console.log("ici;")
-generateMovieList();
+filterByYear("equals", '1991').forEach((element) => {
+    generateMovieCard(element);
+});
 </script>
+</body>

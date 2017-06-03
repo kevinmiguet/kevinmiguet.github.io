@@ -1,35 +1,44 @@
-function normalize (string){
+function normalize(string) {
   return string
-  .toLowerCase()
-  .replace()
+    .toLowerCase()
+    .replace()
 }
 
 // Criteria can be [Director|Country|Actor|Genre]
 function filterBy(criteria, value) {
-  return this.movies
+  return movieData.movies
     .filter((movie) => {
       movie[criteria] === normalize(value);
     })
 }
-
+function hasData(movie) {
+  if (movie.data) {
+    return true
+  } else {
+    return false
+  }
+}
 // function that returns a list of movies 
 function filterByYear(operator, year) {
-  return this.movies
+  return movieData.movies
+    .filter((movie) => {
+      return hasData(movie);
+    })
     .filter((movie) => {
       switch (operator) {
         case "equals":
-          return movie.year === year;
+          return movie.data.year.slice(0,4) === year;
         case "before":
-          return movie.year < year;
-        case "after": 
-          return movie.year > year;
+          return movie.data.year.slice(0,4) < year;
+        case "after":
+          return movie.data.year.slice(0,4) > year;
         default:
-          console.log ("ERROR: unknown operator. Filter won't be applied")
+          console.log("ERROR: unknown operator. Filter won't be applied")
           return true
       }
     })
 }
 
 function getOldMovies() {
-  return this.filterByYear('before', db.currentYear);
+  return movieData.filterByYear('before', db.currentYear);
 }

@@ -31,7 +31,6 @@ function getDaysforSchedulePattern(id, days) {
 }
 
 function generateSchedule(film) {
-  console.log(film)
   if (film.schedule.tlj) {
     return `<span class="mdl-list__item-sub-title"> Tous les jours : ${film.schedule.schedulePatterns[0]}</span>`
   } else {
@@ -47,7 +46,7 @@ const generateMenu = (cinema) => {
   if (movieData.schedules[cinema.dataName] && movieData.schedules[cinema.dataName].length != 0) {
     movieData.schedules[cinema.dataName].forEach((film) => {
       message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${movieData.movies[film.id].data}" width="128" height="170">
+        <img src="https://image.tmdb.org/t/p/original${getPoster(movieData.movies[film.id])}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
          <div class="movieTitle"> ${movieData.movies[film.id].title}</div><div class ="movieInfo">`;
       message += generateSchedule(film)
@@ -56,6 +55,13 @@ const generateMenu = (cinema) => {
   }
   message += `</div>`
   $("#movieList").append(message);
+}
+
+function getPoster(movie) {
+  if (movie.data) {
+    return movie.data.poster
+  }
+  else return null
 }
 
 function generateMarker(element, map) {
@@ -91,13 +97,23 @@ function initMap() {
 function generateMovieList() {
   let message = "";
   for (let movie in movieData.movies) {
+    console.log(movieData.movies[movie].data.poster)
     message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${movieData.movies[movie].data}" width="128" height="170">
+        <img src="https://image.tmdb.org/t/p/original${movieData.movies[movie].data.poster}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
          <span>${movieData.movies[movie].title}</span>`;
     message += `<span class="mdl-list__item-sub-title">hohoh</span>`;
     message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
   }
   $("#movieList2").append(message);
+}
+
+function generateMovieCard(movie) {
+  code = ""
+  code += `<span class='MovieCard'>`
+  code += `<img src="https://image.tmdb.org/t/p/original${movie.data.poster}" width="128" height="170">`
+  // code +=`<span> ${movieData.movies[id].title} </span>`
+  code += `</span>`
+  $("#movieList").append(code);
 }
 
