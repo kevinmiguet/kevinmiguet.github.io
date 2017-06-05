@@ -11,12 +11,9 @@ function filterBy(criteria, value) {
       movie[criteria] === normalize(value);
     })
 }
+
 function hasData(movie) {
-  if (movie.data) {
-    return true
-  } else {
-    return false
-  }
+  return movie.data !== undefined && movie.data !== null
 }
 // function that returns a list of movies 
 function filterByYear(operator, year) {
