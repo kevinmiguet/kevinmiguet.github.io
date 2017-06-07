@@ -22,22 +22,27 @@ const googleMapConfig = {
   gestureHandling: "greedy"
 }
 
-function getDaysforSchedulePattern(id, days) {
-  return Object.keys(days).filter((day) => {
-    return days[day] === id;
-  }).map((day) => {
-    return joursSemaine[day]
-  }).join(", ")
+function getDaysWithSchedulePattern(schedulePatternId, days) {
+  return Object.keys(days)
+  .filter((day) => {return days[day] === schedulePatternId;})
+  .map((day) => {return joursSemaine[day]})
+  .join(", ")
 }
 
 function generateSchedule(film) {
   if (film.schedule.tlj) {
     return `<span class="mdl-list__item-sub-title"> Tous les jours : ${film.schedule.schedulePatterns[0]}</span>`
-  } else {
+  
+} else {
     return film.schedule.schedulePatterns.map((schedulePattern, id) => {
-      return `<span class="mdl-list__item-sub-title"> ${getDaysforSchedulePattern(id, film.schedule.days)} : ${schedulePattern.join(", ")}</span>`
-    }).join("")
+      return `<span class="mdl-list__item-sub-title"> ${getDaysWithSchedulePattern(id, film.schedule.days)} : ${schedulePattern.join(", ")}</span>`
+    })
+    .join("")
   }
+}
+
+function generateDirector(filmId){
+  return getDirector(filmId) ? "AEIOUaeiou".includes(getDirector(filmId)[0]) ? `d'${getDirector(filmId)}`: `de ${getDirector(filmId)}` : "" 
 }
 
 const generateMenu = (cinema) => {
@@ -46,9 +51,10 @@ const generateMenu = (cinema) => {
   if (movieData.schedules[cinema.dataName] && movieData.schedules[cinema.dataName].length != 0) {
     movieData.schedules[cinema.dataName].forEach((film) => {
       message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${getPoster(movieData.movies[film.id])}" width="128" height="170">
+        <img src="https://image.tmdb.org/t/p/original${getPoster(film.id)}" width="128" height="170">
         <span class="mdl-list__item-primary-content">
          <div class="movieTitle"> ${movieData.movies[film.id].title}</div><div class ="movieInfo">`;
+      message += `<span class="mdl-list__item-sub-title movieDirector">${generateDirector(film.id)}</span>`
       message += generateSchedule(film)
       message += `</div></span><span class="mdl-list__item-secondary-content"></span></li>`
     });
@@ -57,11 +63,11 @@ const generateMenu = (cinema) => {
   $("#movieList").append(message);
 }
 
-function getPoster(movie) {
-  if (movie.data) {
-    return movie.data.poster
-  }
-  else return null
+function getPoster(movieId) {
+  return (movieData.movies[movieId].data && movieData.movies[movieId].data.poster) || null
+}
+function getDirector(movieId) {
+  return movieData.movies[movieId] ? movieData.movies[movieId].director : null
 }
 
 function generateMarker(element, map) {

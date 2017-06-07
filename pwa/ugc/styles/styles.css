@@ -32,8 +32,8 @@
   .movieTitle {
     line-height: 18px;
   }
-  .movieInfo {
-    padding-top: 15px;
+  .movieDirector {
+    padding-bottom: 8px;
   }
 @media screen and (max-width: 700px){
   #map {
