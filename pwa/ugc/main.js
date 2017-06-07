@@ -45,14 +45,18 @@ function generateDirector(filmId){
   return getDirector(filmId) ? "AEIOUaeiou".includes(getDirector(filmId)[0]) ? `d'${getDirector(filmId)}`: `de ${getDirector(filmId)}` : "" 
 }
 
+function generatePoster(filmId){
+ return `<img src=${getPosterSrc(filmId)} width="128" height="170">`
+}
+
 const generateMenu = (cinema) => {
   let message = "";
   message += `<div class="menuInfo" id="${cinema.dataName}" ><h1>${cinema.name}</h1>\n`
   if (movieData.schedules[cinema.dataName] && movieData.schedules[cinema.dataName].length != 0) {
     movieData.schedules[cinema.dataName].forEach((film) => {
-      message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${getPoster(film.id)}" width="128" height="170">
-        <span class="mdl-list__item-primary-content">
+      message += `<li class="mdl-list__item mdl-list__item--two-line">`
+      message += generatePoster(film.id)
+      message +=`<span class="mdl-list__item-primary-content">
          <div class="movieTitle"> ${movieData.movies[film.id].title}</div><div class ="movieInfo">`;
       message += `<span class="mdl-list__item-sub-title movieDirector">${generateDirector(film.id)}</span>`
       message += generateSchedule(film)
@@ -63,8 +67,8 @@ const generateMenu = (cinema) => {
   $("#movieList").append(message);
 }
 
-function getPoster(movieId) {
-  return (movieData.movies[movieId].data && movieData.movies[movieId].data.poster) || null
+function getPosterSrc(movieId) {
+  return movieData.movies[movieId].data && movieData.movies[movieId].data.poster  ? `"https://image.tmdb.org/t/p/original${movieData.movies[movieId].data.poster}"` : './images/defaultPoster.png'
 }
 function getDirector(movieId) {
   return movieData.movies[movieId] ? movieData.movies[movieId].director : null
