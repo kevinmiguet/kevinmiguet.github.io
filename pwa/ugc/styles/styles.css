@@ -29,6 +29,9 @@
     width: 0%;
     transition: width 0.5s;
   }
+  #sideBar h1{
+    padding-left: 12px;
+  }
   .movieTitle {
     line-height: 18px;
   }
