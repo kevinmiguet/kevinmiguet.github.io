@@ -46,7 +46,7 @@
   .movieDirector {
     padding-bottom: 8px;
   }
-@media screen and (max-width: 700px){
+/*@media screen and (max-width: 700px){
   #map {
     height: 100%;
     width: 100%;
@@ -78,4 +78,4 @@
     transition: width 0.5s;
   }
 
-}
+}*/
