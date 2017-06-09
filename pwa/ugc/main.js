@@ -15,10 +15,11 @@ const googleMapConfig = {
 
 function hideMenu() {
   $("#sideBar").removeClass("open").addClass("close");
+  $(".menuInfo").hide();  
 }
 
 function showMenu(element) {
-  $(".menuInfo").hide();
+  $(".menuInfo").hide();    
   $(`#${element.dataName}`).show();
   $("#sideBar").removeClass("close").addClass("open");
 }
