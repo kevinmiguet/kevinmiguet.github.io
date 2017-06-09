@@ -35,8 +35,7 @@ function getOldMovies() {
 }
 
 function getPosterSrc(movieId) {
-  return './images/defaultPoster.png'
-  // return movieData.movies[movieId].poster ? `"https://image.tmdb.org/t/p/original${movieData.movies[movieId].poster}"` : './images/defaultPoster.png'
+  return movieData.movies[movieId].poster ? `"https://image.tmdb.org/t/p/original${movieData.movies[movieId].poster}"` : './images/defaultPoster.png'
 }
 function getDirector(movieId) {
   return movieData.movies[movieId] ? movieData.movies[movieId].director : null

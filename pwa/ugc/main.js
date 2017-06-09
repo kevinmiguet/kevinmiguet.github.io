@@ -1,4 +1,5 @@
 var markers = [];
+
 const joursSemaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 const googleMapConfig = {
   zoom: 12,
@@ -14,14 +15,14 @@ const googleMapConfig = {
 }
 
 function hideMenu() {
-  $("#sideBar").removeClass("open").addClass("close");
+  sideBar.removeClass("open").addClass("close");
   $(".menuInfo").hide();  
 }
 
 function showMenu(element) {
-  $(".menuInfo").hide();    
-  $(`#${element.dataName}`).show();
-  $("#sideBar").removeClass("close").addClass("open");
+  $(".menuInfo").hide()    
+  $(`#${element.dataName}`).show(); // use ID for that instead
+  sideBar.removeClass("close").addClass("open");
 }
 
 function hideMarker(cineId) {
