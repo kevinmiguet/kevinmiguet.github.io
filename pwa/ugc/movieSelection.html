@@ -5,8 +5,9 @@
   <script type="text/javascript" charset="UTF-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script type="text/javascript" charset="UTF-8" src="data.js"></script>
   <script type="text/javascript" charset="UTF-8" src="horaires.js"></script>
-  <script type="text/javascript" charset="UTF-8" src="main.js"></script>
   <script type="text/javascript" charset="UTF-8" src="getters.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="generators.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="main.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./styles/material.css">
 </head>
@@ -16,8 +17,8 @@
  </div>
  <script type="text/javascript">
 
-filterByYear("equals", '1991').forEach((element) => {
-    generateMovieCard(element);
+getMoviesFilteredBy("lang", 'ko').forEach((movie) => {
+    generateMovieCard(movie);
 });
 </script>
 </body>

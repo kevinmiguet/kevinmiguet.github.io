@@ -5,7 +5,7 @@ const cinemas = [
             "lng": 2.343341
         },
         "name": "UGC CineCité les Halles",
-        "dataName": 1
+        "dataName": 0
     },
     {
         "position": {
@@ -13,7 +13,7 @@ const cinemas = [
             "lng": 2.3398149
         },
         "name": "UGC Odéon Danton",
-        "dataName": 2
+        "dataName": 1
     },
     {
         "position": {
@@ -21,7 +21,7 @@ const cinemas = [
             "lng": 2.352209
         },
         "name": "Mk2 Beaubourg",
-        "dataName": 3
+        "dataName": 2
     },
     {
         "position": {
@@ -29,7 +29,7 @@ const cinemas = [
             "lng": 2.2843374
         },
         "name": "UGC Maillot",
-        "dataName": 4
+        "dataName": 3
     },
     {
         "position": {
@@ -37,7 +37,7 @@ const cinemas = [
             "lng": 2.3752395
         },
         "name": "Mk2 Bibliotheque",
-        "dataName": 5
+        "dataName": 4
     },
     {
         "position": {
@@ -45,7 +45,7 @@ const cinemas = [
             "lng": 2.399552
         },
         "name": "Mk2 Gambetta",
-        "dataName": 6
+        "dataName": 5
     },
     {
         "position": {
@@ -53,7 +53,7 @@ const cinemas = [
             "lng": 2.3474874
         },
         "name": "Le Grand Rex",
-        "dataName": 7
+        "dataName": 6
     },
     {
         "position": {
@@ -61,7 +61,7 @@ const cinemas = [
             "lng": 2.3305764
         },
         "name": "Mk2 Parnasse",
-        "dataName": 8
+        "dataName": 7
     },
     {
         "position": {
@@ -69,7 +69,7 @@ const cinemas = [
             "lng": 2.3765116
         },
         "name": "UGC CineCité Paris 19",
-        "dataName": 9
+        "dataName": 8
     },
     {
         "position": {
@@ -77,7 +77,7 @@ const cinemas = [
             "lng": 2.371872
         },
         "name": "UGC Lyon Bastille",
-        "dataName": 10
+        "dataName": 9
     },
     {
         "position": {
@@ -85,7 +85,7 @@ const cinemas = [
             "lng": 2.3423381
         },
         "name": "Le Cinéma du Pantheon",
-        "dataName": 11
+        "dataName": 10
     },
     {
         "position": {
@@ -93,7 +93,7 @@ const cinemas = [
             "lng": 2.352131
         },
         "name": "Grand Action",
-        "dataName": 12
+        "dataName": 11
     },
     {
         "position": {
@@ -101,7 +101,7 @@ const cinemas = [
             "lng": 2.3524564
         },
         "name": "La Clef",
-        "dataName": 13
+        "dataName": 12
     },
     {
         "position": {
@@ -109,7 +109,7 @@ const cinemas = [
             "lng": 2.3418923
         },
         "name": "Nouvel Odéon",
-        "dataName": 14
+        "dataName": 13
     },
     {
         "position": {
@@ -117,7 +117,7 @@ const cinemas = [
             "lng": 2.2998506
         },
         "name": "Le Balzac",
-        "dataName": 15
+        "dataName": 14
     },
     {
         "position": {
@@ -125,7 +125,7 @@ const cinemas = [
             "lng": 2.3545912
         },
         "name": "L'Archipel",
-        "dataName": 16
+        "dataName": 15
     },
     {
         "position": {
@@ -133,7 +133,7 @@ const cinemas = [
             "lng": 2.3009149
         },
         "name": "UGC Normandie",
-        "dataName": 17
+        "dataName": 16
     },
     {
         "position": {
@@ -141,7 +141,7 @@ const cinemas = [
             "lng": 2.2942212
         },
         "name": "Mac-Mahon Paris II",
-        "dataName": 18
+        "dataName": 17
     },
     {
         "position": {
@@ -149,7 +149,7 @@ const cinemas = [
             "lng": 2.3257136
         },
         "name": "UGC Montparnasse",
-        "dataName": 19
+        "dataName": 18
     },
     {
         "position": {
@@ -157,7 +157,7 @@ const cinemas = [
             "lng": -1.6940376
         },
         "name": "Bretagne",
-        "dataName": 20
+        "dataName": 19
     },
     {
         "position": {
@@ -165,7 +165,7 @@ const cinemas = [
             "lng": 2.3389634
         },
         "name": "UGC Odéon Danton",
-        "dataName": 21
+        "dataName": 20
     },
     {
         "position": {
@@ -173,7 +173,7 @@ const cinemas = [
             "lng": 2.3691899
         },
         "name": "Mk2 Bastille",
-        "dataName": 22
+        "dataName": 21
     },
     {
         "position": {
@@ -181,7 +181,7 @@ const cinemas = [
             "lng": 2.3721371
         },
         "name": "Mk2 Quai de Loire",
-        "dataName": 23
+        "dataName": 22
     },
     {
         "position": {
@@ -189,7 +189,7 @@ const cinemas = [
             "lng": 2.3129866
         },
         "name": "Mk2 Grand Palais",
-        "dataName": 24
+        "dataName": 23
     },
     {
         "position": {
@@ -197,7 +197,7 @@ const cinemas = [
             "lng": 2.3535866
         },
         "name": "Le Nouveau Latina",
-        "dataName": 25
+        "dataName": 24
     },
     {
         "position": {
@@ -205,7 +205,7 @@ const cinemas = [
             "lng": 2.3442318
         },
         "name": "Espace Saint Michel",
-        "dataName": 26
+        "dataName": 25
     },
     {
         "position": {
@@ -213,7 +213,7 @@ const cinemas = [
             "lng": 2.342958
         },
         "name": "Reflet Medicis",
-        "dataName": 27
+        "dataName": 26
     },
     {
         "position": {
@@ -221,7 +221,7 @@ const cinemas = [
             "lng": 2.3407948
         },
         "name": "Les Trois Luxembourg",
-        "dataName": 28
+        "dataName": 27
     },
     {
         "position": {
@@ -229,7 +229,7 @@ const cinemas = [
             "lng": 2.3419386
         },
         "name": "Accatone",
-        "dataName": 29
+        "dataName": 28
     },
     {
         "position": {
@@ -237,7 +237,7 @@ const cinemas = [
             "lng": 2.2973818
         },
         "name": "Publicis Champs Elysées",
-        "dataName": 30
+        "dataName": 29
     },
     {
         "position": {
@@ -245,7 +245,7 @@ const cinemas = [
             "lng": 2.2985814
         },
         "name": "UGC George V",
-        "dataName": 31
+        "dataName": 30
     },
     {
         "position": {
@@ -253,7 +253,7 @@ const cinemas = [
             "lng": 2.3268582
         },
         "name": "Le Cinéma des Cinéastes",
-        "dataName": 32
+        "dataName": 31
     },
     {
         "position": {
@@ -261,7 +261,7 @@ const cinemas = [
             "lng": 2.3552534
         },
         "name": "Le Brady",
-        "dataName": 33
+        "dataName": 32
     },
     {
         "position": {
@@ -269,7 +269,7 @@ const cinemas = [
             "lng": 2.3289482
         },
         "name": "UGC Rotonde",
-        "dataName": 34
+        "dataName": 33
     },
     {
         "position": {
@@ -277,7 +277,7 @@ const cinemas = [
             "lng": 2.385337
         },
         "name": "UGC Cinécité Bercy",
-        "dataName": 35
+        "dataName": 34
     },
     {
         "position": {
@@ -285,7 +285,7 @@ const cinemas = [
             "lng": 2.3352942
         },
         "name": "UGC Opera",
-        "dataName": 36
+        "dataName": 35
     },
     {
         "position": {
@@ -293,7 +293,7 @@ const cinemas = [
             "lng": 2.36994
         },
         "name": "Majestic Bastille",
-        "dataName": 37
+        "dataName": 36
     },
     {
         "position": {
@@ -301,7 +301,7 @@ const cinemas = [
             "lng": 2.3933973
         },
         "name": "Mk2 Nation",
-        "dataName": 38
+        "dataName": 37
     },
     {
         "position": {
@@ -309,7 +309,7 @@ const cinemas = [
             "lng": 2.3451275
         },
         "name": "Max Linder Panorama",
-        "dataName": 39
+        "dataName": 38
     },
     {
         "position": {
@@ -317,7 +317,7 @@ const cinemas = [
             "lng": 2.3431448
         },
         "name": "Le Champo Espace Jacques Tati",
-        "dataName": 40
+        "dataName": 39
     },
     {
         "position": {
@@ -325,7 +325,7 @@ const cinemas = [
             "lng": 2.371489
         },
         "name": "Mk2 Quai de Seine",
-        "dataName": 41
+        "dataName": 40
     },
     {
         "position": {
@@ -333,7 +333,7 @@ const cinemas = [
             "lng": 2.34281
         },
         "name": "Filmothèque du quartier latin",
-        "dataName": 42
+        "dataName": 41
     },
     {
         "position": {
@@ -341,7 +341,7 @@ const cinemas = [
             "lng": 2.3305129
         },
         "name": "L'Arlequin",
-        "dataName": 43
+        "dataName": 42
     },
     {
         "position": {
@@ -349,7 +349,7 @@ const cinemas = [
             "lng": 2.3489641
         },
         "name": "Le Desperado",
-        "dataName": 44
+        "dataName": 43
     },
     {
         "position": {
@@ -357,7 +357,7 @@ const cinemas = [
             "lng": 2.3496385
         },
         "name": "L'escurial",
-        "dataName": 45
+        "dataName": 44
     },
     {
         "position": {
@@ -365,7 +365,7 @@ const cinemas = [
             "lng": 2.349929
         },
         "name": "Louxor Palais du Cinéma",
-        "dataName": 46
+        "dataName": 45
     },
     {
         "position": {
@@ -373,7 +373,7 @@ const cinemas = [
             "lng": 2.3032618
         },
         "name": "Le Lincoln",
-        "dataName": 47
+        "dataName": 46
     },
     {
         "position": {
@@ -381,7 +381,7 @@ const cinemas = [
             "lng": 2.327922
         },
         "name": "Les Cinq Caumartin",
-        "dataName": 48
+        "dataName": 47
     },
     {
         "position": {
@@ -389,7 +389,7 @@ const cinemas = [
             "lng": 2.330402
         },
         "name": "Le Lucernaire",
-        "dataName": 49
+        "dataName": 48
     },
     {
         "position": {
@@ -397,7 +397,7 @@ const cinemas = [
             "lng": 2.3401914
         },
         "name": "Action Christine",
-        "dataName": 50
+        "dataName": 49
     },
     {
         "position": {
@@ -405,7 +405,7 @@ const cinemas = [
             "lng": 2.2357431
         },
         "name": "UGC CineCite La Défense",
-        "dataName": 51
+        "dataName": 50
     }
 ]
 

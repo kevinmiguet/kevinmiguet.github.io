@@ -1,13 +1,4 @@
-function hideMenu() {
-  $("#sideBar").removeClass("open");
-}
-
-function showMenu(element) {
-  $(".menuInfo").hide();
-  $(`#${element.dataName}`).show();
-  $("#sideBar").addClass("open");
-}
-
+var markers = [];
 const joursSemaine = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 const googleMapConfig = {
   zoom: 12,
@@ -22,56 +13,41 @@ const googleMapConfig = {
   gestureHandling: "greedy"
 }
 
-function getDaysWithSchedulePattern(schedulePatternId, days) {
-  return Object.keys(days)
-  .filter((day) => {return days[day] === schedulePatternId;})
-  .map((day) => {return joursSemaine[day]})
-  .join(", ")
+function hideMenu() {
+  $("#sideBar").removeClass("open").addClass("close");
 }
 
-function generateSchedule(film) {
-  if (film.schedule.tlj) {
-    return `<span class="mdl-list__item-sub-title"> Tous les jours : ${film.schedule.schedulePatterns[0]}</span>`
+function showMenu(element) {
+  $(".menuInfo").hide();
+  $(`#${element.dataName}`).show();
+  $("#sideBar").removeClass("close").addClass("open");
+}
+
+function hideMarker(cineId) {
+  markers[cineId].setVisible(false);
+}
+function showMarker(cineId) {
+  markers[cineId].setVisible(true);
+}
+function toggleMarker(cineId) {
+  markers[cineId].setVisible(!markers[cineId].visible);
+}
+
+function showCineMarkerWithMovie(movieId) {
+  markers.forEach((marker,cineId)=>{
+    hideMarker(cineId)
+  })
   
-} else {
-    return film.schedule.schedulePatterns.map((schedulePattern, id) => {
-      return `<span class="mdl-list__item-sub-title"> ${getDaysWithSchedulePattern(id, film.schedule.days)} : ${schedulePattern.join(", ")}</span>`
-    })
-    .join("")
-  }
+  getCineIdsWithMovie(movieId).forEach((cineId)=>{
+    toggleMarker(cineId)
+  })
 }
 
-function generateDirector(filmId){
-  return getDirector(filmId) ? "AEIOUaeiou".includes(getDirector(filmId)[0]) ? `d'${getDirector(filmId)}`: `de ${getDirector(filmId)}` : "" 
-}
-
-function generatePoster(filmId){
- return `<img src=${getPosterSrc(filmId)} width="128" height="170">`
-}
-
-const generateMenu = (cinema) => {
-  let message = "";
-  message += `<div class="menuInfo" id="${cinema.dataName}" ><h1>${cinema.name}</h1>\n`
-  if (movieData.schedules[cinema.dataName] && movieData.schedules[cinema.dataName].length != 0) {
-    movieData.schedules[cinema.dataName].forEach((film) => {
-      message += `<li class="mdl-list__item mdl-list__item--two-line">`
-      message += generatePoster(film.id)
-      message +=`<span class="mdl-list__item-primary-content">
-         <div class="movieTitle"> ${movieData.movies[film.id].title}</div><div class ="movieInfo">`;
-      message += `<span class="mdl-list__item-sub-title movieDirector">${generateDirector(film.id)}</span>`
-      message += generateSchedule(film)
-      message += `</div></span><span class="mdl-list__item-secondary-content"></span></li>`
-    });
-  }
-  message += `</div>`
-  $("#movieList").append(message);
-}
-
-function getPosterSrc(movieId) {
-  return movieData.movies[movieId].data && movieData.movies[movieId].data.poster  ? `"https://image.tmdb.org/t/p/original${movieData.movies[movieId].data.poster}"` : './images/defaultPoster.png'
-}
-function getDirector(movieId) {
-  return movieData.movies[movieId] ? movieData.movies[movieId].director : null
+function normalize(string) {
+  return string
+  .replace(/(^ +| +$|[\.\-])/g, '')
+  .replace(/(  +)/g, ' ')
+  .toLowerCase()
 }
 
 function generateMarker(element, map) {
@@ -89,6 +65,7 @@ function generateMarker(element, map) {
   marker.addListener('click', () => {
     showMenu(element);
   });
+  markers.push(marker)
 }
 
 function initMap() {
@@ -103,27 +80,3 @@ function initMap() {
     generateMenu(cinema);
   });
 }
-
-function generateMovieList() {
-  let message = "";
-  for (let movie in movieData.movies) {
-    console.log(movieData.movies[movie].data.poster)
-    message += `<li class="mdl-list__item mdl-list__item--two-line">
-        <img src="https://image.tmdb.org/t/p/original${movieData.movies[movie].data.poster}" width="128" height="170">
-        <span class="mdl-list__item-primary-content">
-         <span>${movieData.movies[movie].title}</span>`;
-    message += `<span class="mdl-list__item-sub-title">hohoh</span>`;
-    message += `</span><span class="mdl-list__item-secondary-content"></span></li>`
-  }
-  $("#movieList2").append(message);
-}
-
-function generateMovieCard(movie) {
-  code = ""
-  code += `<span class='MovieCard'>`
-  code += `<img src="https://image.tmdb.org/t/p/original${movie.data.poster}" width="128" height="170">`
-  // code +=`<span> ${movieData.movies[id].title} </span>`
-  code += `</span>`
-  $("#movieList").append(code);
-}
-
