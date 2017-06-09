@@ -33,8 +33,9 @@
     opacity: 0.0;
     transform: scale(1) translate3d(-1000px,0,0);
     transition: transform 400ms ease, opacity 400ms ease;
+    /*width: 20%;*/
+    /*transition: width 0.5s;*/
   }
-  
   #sideBar h1{
     padding-left: 12px;
   }
@@ -58,14 +59,10 @@
   }
   
   #sideBar.open {
-    width:30%;
-    opacity: 1.0;
-    transform: scale(1.0) translate3d(0,0,0);
+    width:80%
   }
-  #sideBar.close {
-    width:30%;
-    opacity: 0.0;
-    transform: scale(1) translate3d(-1000px,0,0);
+  #sideBar.closed {
+    width:0%
   }
 
   #sideBar {
